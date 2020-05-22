@@ -1,0 +1,18 @@
+:root {
+  --colour-body: #000000;
+  --colour-section: red;
+}
+
+body {
+  background-color: var(--colour-body);
+}
+
+.section {
+  height: 300px;
+  border: 2px solid var(--colour-section);
+  background-color: var(--colour-section);
+}
+
+.section + .section {
+  margin-top: 20px;
+}

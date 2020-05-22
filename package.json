@@ -1,0 +1,24 @@
+{
+  "name": "scrollto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "watch": "parcel watch index.html",
+    "start:browser-sync": "run-script-os",
+    "start:win32": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser \"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\"",
+    "//": "Hello! If you are having trouble running this command. Try changing Firefox Developer Edition to FirefoxDeveloperEdition",
+    "start:darwin:linux": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser 'Firefox Developer Edition'"
+  },
+  "author": "Jake Hopking",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "run-script-os": "^1.1.1",
+    "browser-sync": "^2.26.7",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.5"
+  }
+}
