@@ -1,3 +1,5 @@
+html {font-size: 100%;} // 16px
+
 *{
   &,
   &:before,
@@ -5,3 +7,18 @@
       box-sizing: border-box;
   }
 }
+
+:root {
+  --space-1:            5px;
+  --space-2:            10px;
+  --space-3:            20px;
+  --space-4:            30px;
+  --space-5:            40px;
+}
+
+$base-font-size:        1rem; // 16px
+$base-line-height:      20px;
+$scale:                 1.333; // Perfect Fourth
+$base-spacing-unit:     20px;
+$half-spacing-unit:     $base-spacing-unit / 2;
+$quarter-spacing-unit:  $base-spacing-unit / 4;

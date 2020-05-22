@@ -1,11 +1,12 @@
 @import '~reset-css';
 @import './scss/init';
-@import './scss/spacing';
+@import './scss/fonts';
+
 @import './scss/body';
 @import './scss/colours';
-@import './scss/columns';
-@import './scss/fonts';
+@import './scss/text-columns';
 @import './scss/sections';
+@import './scss/utilities';
 
 .site-wrapper {
   max-width: 1440px;

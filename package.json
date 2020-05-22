@@ -11,6 +11,7 @@
   "author": "Jake Hopking",
   "license": "ISC",
   "dependencies": {
+    "https": "^1.0.0",
     "reset-css": "^5.0.1"
   },
   "devDependencies": {
