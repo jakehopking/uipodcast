@@ -1,0 +1,12 @@
+a {
+  color: var(--colour-blue);
+  
+  &:hover,
+  &:active {
+    color: var(--colour-pink);
+  }
+}
+
+.justify {
+  text-align: justify;
+}
