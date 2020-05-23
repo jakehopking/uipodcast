@@ -1,54 +1,17 @@
+// External
 @import '~reset-css';
-@import './scss/init';
-@import './scss/fonts';
+// Config
+@import './scss/config/config';
+// Tools
+@import './scss/tools/tools';
+// Base
+@import './scss/base/base';
 
-@import './scss/body';
-@import './scss/colours';
-@import './scss/text-columns';
+// UI
 @import './scss/sections';
-@import './scss/utilities';
+@import './scss/site';
+@import './scss/text-columns';
+@import './scss/typography';
 
-.site-wrapper {
-  max-width: 1440px;
-  min-width: 320px;
-  min-height: 100vh;
-  margin: 0 auto;
-  background-color: var(--colour-wrapper-bg);
-  display: grid;
-  grid-gap: 60px;
-  grid-template-columns: minmax(320px, 1440px);
-  grid-template-rows: minmax(200px, 600px) auto minmax(400px, 770px);
-  grid-template-areas: 
-    "header"
-    "main"
-    "footer";
-}
-
-.site-header {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-items: center;
-  grid-area: header;
-  &__logo {}
-  &__subtitle {}
-}
-
-.site-main {
-  grid-area: main;
-  display: grid;
-  grid-gap: 60px 20px ;
-  grid-template-columns: 
-    [start] minmax(20px, 60px) 
-    [title-left-start] minmax(auto, 300px) 
-    [title-left-end content-start] minmax(280px, 730px) 
-    [content-end title-right-start] minmax(auto, 300px) 
-    [title-right-end end] minmax(20px, 60px);
-  // grid-template-rows: minmax(200px, auto);
-}
-
-
-
-.site-footer {
-  grid-area: footer;
-}
+// Utilities
+@import './scss/utilities/utilities';

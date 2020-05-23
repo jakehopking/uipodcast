@@ -1,8 +1,10 @@
 .text-columns {
+  > * {
+    margin: 0;
+  }
   flex: 1 1 100%;
   column-rule: 1px solid var(--colour-pink);
   column-gap: $base-spacing-unit * 2.5;
-
   &--two {
     columns: 2 200px;
   }
