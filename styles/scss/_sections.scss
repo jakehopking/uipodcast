@@ -38,7 +38,7 @@
 
   &--dark-bg {
     // color: var(--colour-pink-lightest);
-    background-color: var(--colour-body-bg);
+    background-color: var(--colour-wrapper-bg);
   }
 }
 
@@ -48,4 +48,43 @@
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  grid-template-columns: repeat(2, minmax(150px, 2fr));
+  grid-template-rows: 1.5fr 2fr;
+  grid-gap: 20px;
+  grid-template-areas: 
+    "title title"
+    "subtitle subtitle"
+    "form form";
+
+  @include breakpoint(xl) {
+    grid-template-areas: 
+    "title form"
+    "subtitle form";
+  }
+  &__title {
+    grid-area: title;
+    text-align: center;
+    @include breakpoint(xl) {
+      justify-self: left;
+    }
+    
+    > * {
+      display: inline-block;
+    }
+  }
+  &__subtitle {
+    grid-area: subtitle;
+    text-align: center;
+    margin: 0 30px;
+    @include breakpoint(xl) {
+      justify-self: center;
+    }
+  }
+  &__form {
+    grid-area: form;
+    justify-self: center;
+    @include breakpoint(xl) {
+      justify-self: end;
+    }
+  }
 }

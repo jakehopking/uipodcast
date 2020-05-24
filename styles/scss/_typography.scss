@@ -81,16 +81,15 @@ a {
   }
 }
 
-
 .title-background {
   font-size: $font-size-h4;
   @include breakpoint(md){
-    font-size: $font-size-h3 * 0.9;
+    font-size: $font-size-h3;
   }
   display: inline;
   line-height: 1.6;
   font-style: italic;
-  color: var(--colour-body-bg);
+  color: $colour-body-bg;
   // white-space: pre-wrap;
   // box-shadow: 10px 0 0 white, -10px 0 0 white;
   // padding: 5px 5px;
