@@ -6,12 +6,14 @@
 @import './scss/tools/tools';
 // Base
 @import './scss/base/base';
+@import './scss/typography';
 
 // UI
+@import './scss/buttons';
 @import './scss/sections';
 @import './scss/site';
 @import './scss/text-columns';
-@import './scss/typography';
+@import './scss/vertical-rule';
 
 // Utilities
 @import './scss/utilities/utilities';

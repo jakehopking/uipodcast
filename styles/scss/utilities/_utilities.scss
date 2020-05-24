@@ -63,7 +63,6 @@
 .mx5 { margin-left:   var(--space-5) !important; margin-right:  var(--space-5) !important}
 .my5 { margin-top:    var(--space-5) !important; margin-bottom: var(--space-5) !important}
 
-
 .mxn1 { margin-left: calc(var(--space-1) * -1) !important; margin-right: calc(var(--space-1) * -1) !important;}
 .mxn2 { margin-left: calc(var(--space-2) * -1) !important; margin-right: calc(var(--space-2) * -1) !important;}
 .mxn3 { margin-left: calc(var(--space-3) * -1) !important; margin-right: calc(var(--space-3) * -1) !important;}
@@ -122,3 +121,8 @@
 .pl5 { padding-left:   var(--space-5) !important}
 .py5 { padding-top:    var(--space-5) !important; padding-bottom: var(--space-5) !important}
 .px5 { padding-left:   var(--space-5) !important; padding-right:  var(--space-5) !important}
+
+.display-inline {display: inline !important;}
+.display-block {display: block !important;}
+.display-flex {display: flex !important;}
+.display-grid {display: grid !important;}

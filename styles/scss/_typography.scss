@@ -11,14 +11,14 @@ p {
   font-size: 1.2em;
 }
 
-p::first-letter {
+p.first-letter::first-letter {
   float: left;
   padding: 10px;
   color: var(--colour-body-bg);
   background-color: var(--colour-pink);
   font-size: $font-size-h2;
   font-family: $font-face-serif;
-  margin: 5px 15px -5px 1px;
+  margin: $quarter-spacing-unit $half-spacing-unit -5px 1px;
 }
 
 // Headings
@@ -48,7 +48,9 @@ a {
   }
 }
 
-.justify              {text-align: justify;}
+.text-justify         {text-align: justify;}
+.text-center          {text-align: center;}
+.text-right           {text-align: right;}
 
 // Font family
 .font-default         {font-family: $font-face-default;}
@@ -67,3 +69,32 @@ a {
 .font-weight-light    {font-weight: $font-weight-light;}
 .font-weight-lighter  {font-weight: $font-weight-lighter;}
 .font-weight-lightest {font-weight: $font-weight-lightest;}
+
+.padded-multiline {
+  span {
+    background-color: inherit;
+    display: inline;
+    padding: 0.5rem;
+    
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+}
+
+
+.title-background {
+  font-size: $font-size-h4;
+  @include breakpoint(md){
+    font-size: $font-size-h3 * 0.9;
+  }
+  display: inline;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--colour-body-bg);
+  // white-space: pre-wrap;
+  // box-shadow: 10px 0 0 white, -10px 0 0 white;
+  // padding: 5px 5px;
+  &--white {
+    background-color: white;
+  }
+}
