@@ -1,6 +1,6 @@
 .site-wrapper {
   max-width: 1440px;
-  min-width: 320px;
+  min-width: 360px;
   min-height: 100vh;
   margin: 0 auto;
   background-color: var(--colour-wrapper-bg);
@@ -63,7 +63,7 @@
   grid-template-columns: repeat(auto-fit, minmax(0, auto));
   justify-content: space-between;
   &__item {
-    font-size: 50px;
+    font-size: $font-size-h2;
     a {
       color: var(--colour-pink-lightest);
       &:hover {
