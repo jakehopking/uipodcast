@@ -87,7 +87,11 @@
   }
   .wings {
     width: 100%;
-    margin: 20px auto;
+    margin: 20px 0;
+    padding: 0 20px;
+    @include breakpoint(md) {
+      padding: 0 80px;
+    }
   }
   &__owari {
     margin: 40px auto;
