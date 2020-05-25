@@ -1,6 +1,10 @@
 import {log} from "./utils";
 
 export const scrollTo = function (window) {
+  // Check for browser supports, else return and allow default behaviour
+  if (typeof document.body.scrollIntoView !== "function") {
+    return;
+  }
   log("Scroll To initialised");
 
   // Name of data attribute in html
@@ -11,7 +15,10 @@ export const scrollTo = function (window) {
   const defaultScrollPosition = "start";
 
   // Main scroller function
-  const scroller = function () {
+  const scroller = function (event) {
+    // Prevent default browser anchor 'jump' behaviour
+    event.preventDefault();
+
     // The tartget ID to scroll to, defined in html data attribute "data-scroll-to"
     const target = document.getElementById(this.dataset["scrollTo"]);
 

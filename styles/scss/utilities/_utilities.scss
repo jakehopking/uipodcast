@@ -13,6 +13,7 @@
 // 3 	--space-3 (default 20px)
 // 4 	--space-4 (default 30px)
 // 5 	--space-5 (default 40px)
+// 5 	--space-6 (default 60px)
 
 // Margin
 .m0  { margin:        0 !important}
@@ -63,11 +64,20 @@
 .mx5 { margin-left:   var(--space-5) !important; margin-right:  var(--space-5) !important}
 .my5 { margin-top:    var(--space-5) !important; margin-bottom: var(--space-5) !important}
 
+.m6  { margin:        var(--space-6) !important}
+.mt6 { margin-top:    var(--space-6) !important}
+.mr6 { margin-right:  var(--space-6) !important}
+.mb6 { margin-bottom: var(--space-6) !important}
+.ml6 { margin-left:   var(--space-6) !important}
+.mx6 { margin-left:   var(--space-6) !important; margin-right:  var(--space-6) !important}
+.my6 { margin-top:    var(--space-6) !important; margin-bottom: var(--space-6) !important}
+
 .mxn1 { margin-left: calc(var(--space-1) * -1) !important; margin-right: calc(var(--space-1) * -1) !important;}
 .mxn2 { margin-left: calc(var(--space-2) * -1) !important; margin-right: calc(var(--space-2) * -1) !important;}
 .mxn3 { margin-left: calc(var(--space-3) * -1) !important; margin-right: calc(var(--space-3) * -1) !important;}
 .mxn4 { margin-left: calc(var(--space-4) * -1) !important; margin-right: calc(var(--space-4) * -1) !important;}
 .mxn5 { margin-left: calc(var(--space-5) * -1) !important; margin-right: calc(var(--space-5) * -1) !important;}
+.mxn6 { margin-left: calc(var(--space-6) * -1) !important; margin-right: calc(var(--space-6) * -1) !important;}
 
 .ml-auto { margin-left: auto !important}
 .mr-auto { margin-right: auto !important}
@@ -121,6 +131,14 @@
 .pl5 { padding-left:   var(--space-5) !important}
 .py5 { padding-top:    var(--space-5) !important; padding-bottom: var(--space-5) !important}
 .px5 { padding-left:   var(--space-5) !important; padding-right:  var(--space-5) !important}
+
+.p6  { padding:        var(--space-6) !important}
+.pt6 { padding-top:    var(--space-6) !important}
+.pr6 { padding-right:  var(--space-6) !important}
+.pb6 { padding-bottom: var(--space-6) !important}
+.pl6 { padding-left:   var(--space-6) !important}
+.py6 { padding-top:    var(--space-6) !important; padding-bottom: var(--space-6) !important}
+.px6 { padding-left:   var(--space-6) !important; padding-right:  var(--space-6) !important}
 
 .display-inline {display: inline !important;}
 .display-inline-block {display: inline-block !important;}
