@@ -1,3 +1,7 @@
+em {
+  font-style: italic;
+}
+
 // Paragraph
 p {
   margin-bottom: 1.15rem;
@@ -13,7 +17,7 @@ p {
 
 p.first-letter::first-letter {
   float: left;
-  padding: 10px;
+  padding: 15px 10px;
   color: var(--colour-body-bg);
   background-color: var(--colour-pink);
   font-size: $font-size-h2;
