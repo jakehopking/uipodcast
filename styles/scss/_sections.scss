@@ -100,3 +100,33 @@
     }
   }
 }
+
+.coming-soon {
+  margin: 0 auto;
+  padding: 5px 15px;
+  background-color: $colour-pink;
+  font-size: $font-size-h3;
+  font-family: $font-face-condensed;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  box-shadow: 0 0 0 0 rgba(255, 107, 177, 1);
+	transform: scale(1) rotate(-10deg);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95) rotate(-10deg);
+		box-shadow: 0 0 0 0 rgba(255, 107, 177, 0.7);
+	}
+
+	70% {
+		transform: scale(1) rotate(-10deg);
+		box-shadow: 0 0 0 15px rgba(255, 107, 177, 0);
+	}
+
+	100% {
+		transform: scale(0.95) rotate(-10deg);
+		box-shadow: 0 0 0 0 rgba(255, 107, 177, 0);
+	}
+}
