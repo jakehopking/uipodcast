@@ -41,6 +41,10 @@
   &__subtitle {
     grid-area: subtitle;
     text-align: center;
+    margin-top: 80px;
+    @include breakpoint(md) {
+      margin-top: 0;
+    }
   }
 }
 

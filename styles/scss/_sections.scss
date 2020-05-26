@@ -60,7 +60,10 @@
   background-repeat: no-repeat;
   background-size: cover;
   grid-template-columns: repeat(2, minmax(150px, 2fr));
-  grid-template-rows: 1.5fr 2fr;
+  grid-template-rows: .75fr 2fr;
+  @include breakpoint(md) {
+    grid-template-rows: 1.5fr 2fr;
+  }
   grid-gap: 20px;
   grid-template-areas: 
     "title title"
