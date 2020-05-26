@@ -60,11 +60,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   grid-template-columns: repeat(2, minmax(150px, 2fr));
-  grid-template-rows: .75fr 2fr;
+  grid-template-rows: .8fr 2fr;
+  grid-gap: 30px 20px;
   @include breakpoint(md) {
-    grid-template-rows: 1.5fr 2fr;
+    grid-gap: 20px 20px;
+    grid-template-rows: 1.35fr 2fr;
   }
-  grid-gap: 20px;
   grid-template-areas: 
     "title title"
     "subtitle subtitle"
@@ -98,6 +99,7 @@
   &__form {
     grid-area: form;
     justify-self: center;
+    align-self: end;
     @include breakpoint(xl) {
       justify-self: end;
     }
