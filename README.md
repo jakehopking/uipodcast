@@ -1,7 +1,5 @@
-Very simple scroll to library based on `Element.scrollIntoView()` API.
+Static files and assets that are used to build [uitherapy.fm](https://uitherapy.fm/) website.
 
-Uses data attributes for target and scroll position.
+Uses `parcel-bundler` for asset management.
 
-Uses `parcel-bundler` to build assets.
-
-Run `npm i` and `npm start` to see build and live-reload example in browser.
+Install, build and run: `npm i` & `npm start` & open browser to [localhost:1234](http://localhost:1234).
