@@ -1,11 +1,15 @@
 {
-  "name": "UIPodcast.net",
+  "name": "uitherapy.fm",
   "version": "1.0.0",
-  "description": "",
+  "description": "Static repo for UI Therapy website",
   "main": "scripts/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jakehopking/uitherapy.fm.git"
+  },
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html --no-minify",
     "watch": "parcel watch index.html"
   },
   "author": "Jake Hopking",
