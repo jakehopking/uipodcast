@@ -1,0 +1,28 @@
+:root {
+    --space-1: 5px;
+    --space-2: 10px;
+    --space-3: 20px;
+    --space-4: 30px;
+    --space-5: 40px;
+    --space-6: 60px;
+}
+
+$base-font-size: 1rem; // 16px
+$base-spacing-unit: 20px;
+$half-spacing-unit: $base-spacing-unit / 2;
+$quarter-spacing-unit: $base-spacing-unit / 4;
+$border-radius-default: 4px;
+
+$imgPath: '../images/';
+
+// Breakpoints
+$breakpoint-sizes: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+);
+
+@import './breakpoints';
+@import './colours';
+@import './fonts';

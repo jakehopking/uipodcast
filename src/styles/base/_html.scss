@@ -1,0 +1,11 @@
+html {
+    font-size: 100%; // 16px
+}
+
+* {
+    &,
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}

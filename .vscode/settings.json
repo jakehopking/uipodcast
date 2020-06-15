@@ -4,5 +4,29 @@
     "titleBar.inactiveForeground": "#fff",
     "titleBar.activeBackground": "#D71671",
     "titleBar.inactiveBackground": "#9f074d"
-  }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "prettier.bracketSpacing": false,
+  "prettier.printWidth": 80,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.htmlWhitespaceSensitivity": "css",
+  "[html]": {
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.formatOnSave": false
+  },
+  "eslint.workingDirectories": [{ "mode": "auto" }]
 }

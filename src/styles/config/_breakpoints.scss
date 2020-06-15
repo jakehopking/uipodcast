@@ -1,0 +1,35 @@
+$breakpoints-map: (
+    // Small devices (landscape phones: >=576px)
+        sm:
+        'screen and (min-width: #{map-get($map: $breakpoint-sizes, $key: sm)})',
+    // Small devices (portrait phones: <576px)
+        sm_less:
+        'screen and (max-width: #{map-get($map: $breakpoint-sizes, $key: sm)})',
+    // Small devices (landscape phones only: >=576px && <768px)
+        sm_only:
+        'screen and (min-width: #{map-get($map: $breakpoint-sizes, $key: sm)}) and (max-width: #{map-get($map: $breakpoint-sizes, $key: md)})',
+    // Medium devices (tablets: >=768px)
+        md:
+        'screen and (min-width: #{map-get($map: $breakpoint-sizes, $key: md)})',
+    // Small devices (landscape phones etc: <768px)
+        md_less:
+        'screen and (max-width: #{map-get($map: $breakpoint-sizes, $key: md)})',
+    // Medium devices (tablets: >=768px && <992px)
+        md_only:
+        'screen and (min-width: #{map-get($map: $breakpoint-sizes, $key: md)}) and (max-width: #{map-get($map: $breakpoint-sizes, $key: lg)})',
+    // Large devices (desktops: >=992px)
+        lg:
+        'screen and (min-width: #{map-get($map: $breakpoint-sizes, $key: lg)})',
+    // Medium devices (tablets, phones etc: <992px)
+        lg_less:
+        'screen and (max-width: #{map-get($map: $breakpoint-sizes, $key: lg)})',
+    // Large devices (desktops: >=992px && <1200px)
+        lg_only:
+        'screen and (min-width: #{map-get($map: $breakpoint-sizes, $key: lg)}) and (max-width: #{map-get($map: $breakpoint-sizes, $key: xl)})',
+    // Extra large devices (large desktops: >=1200px)
+        xl:
+        'screen and (min-width: #{map-get($map: $breakpoint-sizes, $key: xl)})',
+    // Large devices (desktops, tablets, phones etc: <1200px)
+        xl_less:
+        'screen and (max-width: #{map-get($map: $breakpoint-sizes, $key: xl)})'
+);
