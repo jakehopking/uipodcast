@@ -77,7 +77,9 @@
   width: 100%;
   display: flex;
   background-color: rgba(255, 255, 255, 0.3);
+  z-index: 10;
   @include breakpoint(md) {
+    position: relative;
     bottom: unset;
   }
   &__toggle {
@@ -118,6 +120,8 @@
   }
   &__link {
     // flex: 1 1 100%;
+    display: flex;
+    align-items: center;
     width: 100%;
     text-align: center;
     font-family: $font-face-default;
@@ -126,7 +130,6 @@
     font-size: 26px;
     color: white;
     text-decoration: none;
-    align-self: center;
     &--active, &:active, &:hover {
       background-color: white;
       color: var(--colour-pink);
