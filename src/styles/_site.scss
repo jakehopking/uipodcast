@@ -12,6 +12,7 @@
     'header'
     'main'
     'footer';
+    scroll-padding: 100px 0 0 0;
 }
 
 .site-header {
@@ -71,15 +72,75 @@
 }
 
 .site-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   display: flex;
   background-color: rgba(255, 255, 255, 0.3);
+  @include breakpoint(md) {
+    bottom: unset;
+  }
   &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    height: 63px;
+    width: 63px;
+    border-radius: 100%;
+    border: 3px solid var(--colour-wrapper-bg);
+    background-color: var(--colour-pink);
+    color: white;
     @include breakpoint(md) {
       display: none;
     }
+    &--active {
+      background-color: var(--colour-wrapper-bg);
+    }
   }
   &__menu {
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--colour-pink);
+    width: 100%;
+    padding: 10px;
+    max-height: 100vh;
+    @include breakpoint(md) {
+      flex-direction: row;
+      width: auto;
+      padding: unset;
+      align-items: stretch;
+      background-color: white;
+    }
+  }
+  &__link {
+    // flex: 1 1 100%;
+    width: 100%;
+    text-align: center;
+    font-family: $font-face-default;
+    font-weight: $font-weight-light;
+    padding: 10px;
+    font-size: 26px;
+    color: white;
+    text-decoration: none;
+    align-self: center;
+    &--active, &:active, &:hover {
+      background-color: white;
+      color: var(--colour-pink);
+    }
+    @include breakpoint(md) {
+      padding: 5px 15px;
+      font-size: 18px;
+      background-color: white;
+      color: var(--colour-wrapper-bg);
+      &--active, &:active, &:hover {
+        background-color: var(--colour-pink);
+        color: white;
+      }
+    }
   }
 }
 

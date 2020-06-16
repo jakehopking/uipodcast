@@ -6,7 +6,16 @@ import LayoutDefault from '../layouts/layout-default';
 import SectionTitleWings from '../components/sections/SectionTitleWings';
 import SectionContent from '../components/sections/SectionContent';
 import TextColumns from '../components/textColumns/TextColumns';
-import {FaArrowAltCircleRight} from 'react-icons/fa';
+import VerticalRule from '../components/VerticalRule';
+import Newsletter from '../components/Newsletter';
+import {
+  FaArrowAltCircleRight,
+  FaTwittter,
+  FaInstagram,
+  FaFacebookSquare,
+  FaEnvelopeOpen,
+  FaTwitter,
+} from 'react-icons/fa';
 
 export default function Home({data}) {
   const episodes = data.allMdx.edges.filter(
@@ -48,6 +57,46 @@ export default function Home({data}) {
           </p>
         </TextColumns>
       </SectionContent>
+      <SectionTitleWings id="connect" tag="h2">
+        Connect
+      </SectionTitleWings>
+      <SectionContent className={'mb6'}>
+        <ul className="social">
+          <li className="social__item">
+            <a
+              href="https://twitter.com/uitherapy"
+              target="_blank"
+              title="Twitter"
+            >
+              <FaTwitter />
+            </a>
+          </li>
+          <li className="social__item">
+            <a
+              href="https://instagram.com/uitherapy"
+              target="_blank"
+              title="Instagram"
+            >
+              <FaInstagram />
+            </a>
+          </li>
+          <li className="social__item">
+            <a
+              href="#"
+              target="_blank"
+              data-scroll-to="suggest"
+              title="Not sure I want a Facebook page. Let me know if you think it might be valuable..."
+            >
+              <FaFacebookSquare />
+            </a>
+          </li>
+          <li className="social__item">
+            <a href="mailto:show@uitherapy.fm" title="Email the show">
+              <FaEnvelopeOpen />
+            </a>
+          </li>
+        </ul>
+      </SectionContent>
       <SectionContent className={'mb6'}>
         <h4>{episodes.length} Episode</h4>
         {episodes.map(({node}) => (
@@ -77,6 +126,20 @@ export default function Home({data}) {
           <FaArrowAltCircleRight className="btn__icon" />
         </a>
       </SectionTitleWings>
+      <SectionContent>
+        <article>
+          <p className="lead-plus text-center font-sans font-weight-light">
+            Do you have an idea for the show, can you think of some industry
+            experts that would benefit the design and developer community to
+            learn from or perhaps you’d like to appear as a guest yourself!
+            Maybe even you'd like to co-host the show? Whatever the idea, I
+            would LOVE to hear it!
+          </p>
+        </article>
+      </SectionContent>
+      <VerticalRule />
+      <Newsletter />
+      <VerticalRule />
     </LayoutDefault>
   );
 }
