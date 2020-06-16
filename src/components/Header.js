@@ -3,6 +3,7 @@ import {useStaticQuery, Link, graphql} from 'gatsby';
 import Img from 'gatsby-image';
 import imgHeader from '../images/header.png';
 import imgLogo from '../images/logo-round.png';
+import Nav from './Nav';
 
 export default function Header() {
   const data = useStaticQuery(
@@ -28,7 +29,10 @@ export default function Header() {
 
   return (
     <header className="site-header">
-      <img className="site-header__logo" src={imgLogo} />
+      <Nav></Nav>
+      <Link to="/" className="site-header__logo">
+        <img src={imgLogo} />
+      </Link>
       <div className="site-header__subtitle">
         <h1 className="padded-multiline title-background title-background--white">
           <span>

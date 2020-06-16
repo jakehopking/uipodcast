@@ -9,21 +9,22 @@
   grid-template-columns: minmax(300px, 1440px);
   grid-template-rows: minmax(200px, 600px) auto minmax(400px, auto);
   grid-template-areas:
-    "header"
-    "main"
-    "footer";
+    'header'
+    'main'
+    'footer';
 }
 
 .site-header {
   position: relative;
   display: grid;
   grid-template-columns:
-    [nav1-start] auto [nav1-end logo-start] minmax(100px, 200px)
-    [logo-end nav2-start] auto [nav2-start];
-  grid-template-rows: 250px 110px;
+    [space1-start] auto [space1-end logo-start] minmax(100px, 200px)
+    [logo-end space2-start] auto [space2-start];
+  grid-template-rows: 50px 230px 110px;
   grid-template-areas:
-    "nav1 logo nav2"
-    "subtitle subtitle subtitle";
+    'nav nav nav'
+    'logo logo logo'
+    'subtitle subtitle subtitle';
   align-items: center;
   grid-area: header;
   background-image: url('#{$imgPath}header.png');
@@ -38,16 +39,25 @@
   //   z-index: 1;
   //   pointer-events: none;
   // }
+  &__nav {
+    grid-area: nav;
+    align-self: stretch;
+  }
   &__logo {
-    $size: 200px;
-    max-width: $size;
-    max-height: $size;
-    width: 100%;
     grid-area: logo;
-    border: 5px solid white;
-    background-color: white;
-    border-radius: 50%;
+    // grid-column: logo-start;
+    grid-column: 1 / -1;
+    text-align: center;
     // z-index: 2;
+    img {
+      $size: 200px;
+      max-width: $size;
+      max-height: $size;
+      width: 100%;
+      border: 5px solid white;
+      background-color: white;
+      border-radius: 50%;
+    }
   }
   &__subtitle {
     grid-area: subtitle;
@@ -57,6 +67,19 @@
     @include breakpoint(md) {
       margin-top: 0;
     }
+  }
+}
+
+.site-nav {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.3);
+  &__toggle {
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+  &__menu {
+    background-color: white;
   }
 }
 
