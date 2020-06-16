@@ -1,28 +1,28 @@
 em {
-    font-style: italic;
+  font-style: italic;
 }
 
 // Paragraph
 p {
-    margin-bottom: 1.15rem;
-    line-height: $line-height-paragraph;
-    font-weight: $font-weight-lighter;
+  margin-bottom: 1.15rem;
+  line-height: $line-height-paragraph;
+  font-weight: $font-weight-lighter;
 }
 .lead {
-    font-size: 1.1em;
+  font-size: 1.1em;
 }
 .lead-plus {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 p.first-letter::first-letter {
-    float: left;
-    padding: 15px 10px;
-    color: var(--colour-body-bg);
-    background-color: var(--colour-pink);
-    font-size: $font-size-h2;
-    font-family: $font-face-serif;
-    margin: $quarter-spacing-unit $half-spacing-unit -5px 1px;
+  float: left;
+  padding: 15px 10px;
+  color: var(--colour-body-bg);
+  background-color: var(--colour-pink);
+  font-size: $font-size-h2;
+  font-family: $font-face-serif;
+  margin: $quarter-spacing-unit $half-spacing-unit -5px 1px;
 }
 
 // Headings
@@ -31,122 +31,122 @@ h2,
 h3,
 h4,
 h5 {
-    margin: 2.75rem 0 1.05rem;
-    font-family: $font-face-serif;
-    font-weight: $font-weight-light;
-    line-height: $line-height-headings;
+  margin: 2.75rem 0 1.05rem;
+  font-family: $font-face-serif;
+  font-weight: $font-weight-light;
+  line-height: $line-height-headings;
 }
 h1 {
-    margin-top: 0;
-    font-size: $font-size-h1;
+  margin-top: 0;
+  font-size: $font-size-h1;
 }
 h2 {
-    font-size: $font-size-h2;
+  font-size: $font-size-h2;
 }
 h3 {
-    font-size: $font-size-h3;
+  font-size: $font-size-h3;
 }
 h4 {
-    font-size: $font-size-h4;
+  font-size: $font-size-h4;
 }
 h5 {
-    font-size: $font-size-h5;
+  font-size: $font-size-h5;
 }
 small,
 .text_small {
-    font-size: $font-size-small;
+  font-size: $font-size-small;
 }
 
 // Anchors
 a {
-    color: var(--colour-blue);
-
-    &:hover,
-    &:active {
-        color: var(--colour-pink);
-    }
+  color: var(--colour-blue);
+  cursor: pointer;
+  &:hover,
+  &:active {
+    color: var(--colour-pink);
+  }
 }
 
 .text-justify {
-    text-align: justify;
+  text-align: justify;
 }
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 .text-right {
-    text-align: right;
+  text-align: right;
 }
 
 // Font family
 .font-default {
-    font-family: $font-face-default;
+  font-family: $font-face-default;
 }
 .font-sans {
-    font-family: $font-face-sans;
+  font-family: $font-face-sans;
 }
 .font-sans-condensed {
-    font-family: $font-face-condensed;
+  font-family: $font-face-condensed;
 }
 .font-serif {
-    font-family: $font-face-serif;
+  font-family: $font-face-serif;
 }
 .font-mono {
-    font-family: $font-face-mono;
+  font-family: $font-face-mono;
 }
 .font-icon-default {
-    font-family: $font-face-icon-default;
+  font-family: $font-face-icon-default;
 }
 
 // Font weights
 .font-weight-boldest {
-    font-weight: $font-weight-boldest;
+  font-weight: $font-weight-boldest;
 }
 .font-weight-bolder {
-    font-weight: $font-weight-bolder;
+  font-weight: $font-weight-bolder;
 }
 .font-weight-bold {
-    font-weight: $font-weight-bold;
+  font-weight: $font-weight-bold;
 }
 .font-weight-medium {
-    font-weight: $font-weight-medium;
+  font-weight: $font-weight-medium;
 }
 .font-weight-regular {
-    font-weight: $font-weight-regular;
+  font-weight: $font-weight-regular;
 }
 .font-weight-light {
-    font-weight: $font-weight-light;
+  font-weight: $font-weight-light;
 }
 .font-weight-lighter {
-    font-weight: $font-weight-lighter;
+  font-weight: $font-weight-lighter;
 }
 .font-weight-lightest {
-    font-weight: $font-weight-lightest;
+  font-weight: $font-weight-lightest;
 }
 
 .padded-multiline {
-    span {
-        background-color: inherit;
-        display: inline;
-        padding: 0.5rem;
+  span {
+    background-color: inherit;
+    display: inline;
+    padding: 0.5rem;
 
-        box-decoration-break: clone;
-        -webkit-box-decoration-break: clone;
-    }
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
 }
 
 .title-background {
-    // font-size: $font-size-h4;
-    font-size: $font-size-h3;
-    @include breakpoint(md) {
-    }
-    display: inline;
-    line-height: 1.6;
-    font-style: italic;
-    color: $colour-body-bg;
-    // white-space: pre-wrap;
-    // box-shadow: 10px 0 0 white, -10px 0 0 white;
-    // padding: 5px 5px;
-    &--white {
-        background-color: white;
-    }
+  // font-size: $font-size-h4;
+  font-size: $font-size-h3;
+  @include breakpoint(md) {
+  }
+  display: inline;
+  line-height: 1.6;
+  font-style: italic;
+  color: $colour-body-bg;
+  // white-space: pre-wrap;
+  // box-shadow: 10px 0 0 white, -10px 0 0 white;
+  // padding: 5px 5px;
+  &--white {
+    background-color: white;
+  }
 }

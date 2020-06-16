@@ -1,8 +1,8 @@
-import React from "react"
-import { useStaticQuery, Link, graphql } from "gatsby"
-import Img from "gatsby-image"
-import imgHeader from "../images/header.png"
-import imgLogo from "../images/logo-round.png"
+import React from 'react';
+import {useStaticQuery, Link, graphql} from 'gatsby';
+import Img from 'gatsby-image';
+import imgHeader from '../images/header.png';
+import imgLogo from '../images/logo-round.png';
 
 export default function Header() {
   const data = useStaticQuery(
@@ -14,7 +14,7 @@ export default function Header() {
             subTitle
           }
         }
-        file(relativePath: { eq: "images/header.png" }) {
+        file(relativePath: {eq: "images/header.png"}) {
           childImageSharp {
             fluid(maxWidth: 1440) {
               ...GatsbyImageSharpFluid_tracedSVG
@@ -23,8 +23,8 @@ export default function Header() {
         }
       }
     `
-  )
-  console.log(data)
+  );
+  // console.log(data)
 
   return (
     <header className="site-header">
@@ -46,5 +46,5 @@ export default function Header() {
         style={{ position: `absolute !important` }}
       /> */}
     </header>
-  )
+  );
 }
