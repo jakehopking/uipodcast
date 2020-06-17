@@ -35,7 +35,7 @@ export default function Home({data}) {
       <SectionContent type="wide">
         <PodcastServices />
       </SectionContent>
-      <SectionContent className={'mb6'}>
+      <SectionContent className={'mb2'}>
         <h3 className="my0">
           <strong className="colour-pink font-weight-bold">
             Latest episode
