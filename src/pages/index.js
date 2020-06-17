@@ -1,6 +1,7 @@
 import React from 'react';
 // import { css } from "@emotion/core"
 import {Link, graphql} from 'gatsby';
+import ReactPlayer from 'react-player';
 // import { rhythm } from "../utils/typography"
 import LayoutDefault from '../layouts/layout-default';
 import SectionTitleWings from '../components/sections/SectionTitleWings';
@@ -8,6 +9,7 @@ import SectionContent from '../components/sections/SectionContent';
 import TextColumns from '../components/textColumns/TextColumns';
 import VerticalRule from '../components/VerticalRule';
 import Newsletter from '../components/Newsletter';
+import PodcastServices from '../components/PodcastServices';
 import scrollTo from '../utils/scrollTo';
 import {
   FaArrowAltCircleRight,
@@ -18,12 +20,44 @@ import {
 } from 'react-icons/fa';
 
 export default function Home({data}) {
+  // Filter all Mdx for category of 'episode'
   const episodes = data.allMdx.edges.filter(
     ({node}) => node.frontmatter.category === 'episode'
   );
+  // Destructure podcast url, title and post url from frontmatter
+  const {podcastUrl, title, path, date} = episodes[0].node.frontmatter;
 
   return (
     <LayoutDefault>
+      <SectionTitleWings id="listen" tag="h2">
+        Listen
+      </SectionTitleWings>
+      <SectionContent type="wide">
+        <PodcastServices />
+      </SectionContent>
+      <SectionContent className={'mb6'}>
+        <h3 className="my0">
+          <strong className="colour-pink font-weight-bold">
+            Latest episode
+            <span className="colour-blue display-block">&mdash;</span>
+          </strong>
+        </h3>
+        <h4 className="font-weight-light mt0" style={{lineHeight: 1.6}}>
+          {title}
+          <em style={{opacity: 0.4}}> &mdash; {date}</em>
+        </h4>
+        <ReactPlayer
+          controls
+          url={podcastUrl}
+          width="100%"
+          height="50px"
+          wrapper="react-player"
+          style={{marginBottom: '20px'}}
+        />
+        <p>
+          <Link to={path}>Show notes for this episode.</Link>
+        </p>
+      </SectionContent>
       <SectionTitleWings id="about" tag="h2">
         About
       </SectionTitleWings>
@@ -98,25 +132,6 @@ export default function Home({data}) {
           </li>
         </ul>
       </SectionContent>
-      <SectionContent className={'mb6'}>
-        <h4>{episodes.length} Episode</h4>
-        {episodes.map(({node}) => (
-          <div key={node.id}>
-            <Link
-              to={
-                node.frontmatter.path !== null
-                  ? node.frontmatter.path
-                  : node.fields.slug
-              }
-            >
-              <h3>
-                {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
-              </h3>
-              <p>{node.excerpt}</p>
-            </Link>
-          </div>
-        ))}
-      </SectionContent>
       <SectionTitleWings>
         <a
           href="https://forms.gle/xAsyENsbhJbYg2wo6"
@@ -158,6 +173,7 @@ export const query = graphql`
             path
             category
             date(formatString: "DD MMMM, YYYY")
+            podcastUrl
           }
           fields {
             slug

@@ -35,7 +35,7 @@ SectionTitleWings.propTypes = {
   img: PropTypes.string,
   colour: PropTypes.string,
   className: PropTypes.string,
-  children: PropTypes.any.isRequired,
+  children: PropTypes.any,
 };
 
 export default SectionTitleWings;

@@ -8,8 +8,11 @@
 @import 'base/base';
 @import 'typography';
 
+// Components
+@import 'components/buttons';
+@import 'components/podcastServices';
+
 // UI
-@import 'buttons';
 @import 'sections';
 @import 'site';
 @import 'text-columns';

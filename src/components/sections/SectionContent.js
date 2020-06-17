@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// type options: bleed, content, wide
+
 const SectionContent = ({className, children, type = 'content', id = null}) => {
   return (
     <section className={`section section--${type} ${className}`} id={id}>

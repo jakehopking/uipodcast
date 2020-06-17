@@ -68,59 +68,59 @@ a {
 }
 
 .text-justify {
-  text-align: justify;
+  text-align: justify !important;
 }
 .text-center {
-  text-align: center;
+  text-align: center !important;
 }
 .text-right {
-  text-align: right;
+  text-align: right !important;
 }
 
 // Font family
 .font-default {
-  font-family: $font-face-default;
+  font-family: $font-face-default !important;
 }
 .font-sans {
-  font-family: $font-face-sans;
+  font-family: $font-face-sans !important;
 }
 .font-sans-condensed {
-  font-family: $font-face-condensed;
+  font-family: $font-face-condensed !important;
 }
 .font-serif {
-  font-family: $font-face-serif;
+  font-family: $font-face-serif !important;
 }
 .font-mono {
-  font-family: $font-face-mono;
+  font-family: $font-face-mono !important;
 }
 .font-icon-default {
-  font-family: $font-face-icon-default;
+  font-family: $font-face-icon-default !important;
 }
 
 // Font weights
 .font-weight-boldest {
-  font-weight: $font-weight-boldest;
+  font-weight: $font-weight-boldest !important;
 }
 .font-weight-bolder {
-  font-weight: $font-weight-bolder;
+  font-weight: $font-weight-bolder !important;
 }
 .font-weight-bold {
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-bold !important;
 }
 .font-weight-medium {
-  font-weight: $font-weight-medium;
+  font-weight: $font-weight-medium !important;
 }
 .font-weight-regular {
-  font-weight: $font-weight-regular;
+  font-weight: $font-weight-regular !important;
 }
 .font-weight-light {
-  font-weight: $font-weight-light;
+  font-weight: $font-weight-light !important;
 }
 .font-weight-lighter {
-  font-weight: $font-weight-lighter;
+  font-weight: $font-weight-lighter !important;
 }
 .font-weight-lightest {
-  font-weight: $font-weight-lightest;
+  font-weight: $font-weight-lightest !important;
 }
 
 .padded-multiline {
@@ -149,4 +149,16 @@ a {
   &--white {
     background-color: white;
   }
+}
+
+.colour-pink {
+  color: $colour-pink !important;
+}
+
+.colour-blue {
+  color: $colour-blue !important;
+}
+
+.colour-pink-lightest {
+  color: $colour-pink-lightest !important;
 }

@@ -1,4 +1,4 @@
-import React, {useState, Fragment} from 'react';
+import React, {useState, useEffect, Fragment} from 'react';
 import {Link} from 'gatsby';
 import {FiMenu, FiX} from 'react-icons/fi';
 import scrollTo from '../utils/ScrollTo';
@@ -6,9 +6,17 @@ import scrollTo from '../utils/ScrollTo';
 const Nav = () => {
   const [showMenu, setShowMenu] = useState(true);
 
+  // Hide menu on load if mobile
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setShowMenu(false);
+    }
+  }, []);
+
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+  // console.log(window.innerWidth);
   // const toggleMenuTimeout = () => {
   //   setTimeout(() => toggleMenu(), 600);
   // };
@@ -46,7 +54,7 @@ const Nav = () => {
               className="site-nav__link"
               activeClassName="site-nav__link--active"
             >
-              Shownotes
+              Episodes
             </Link>
             {window.location.pathname === '/' && (
               <Fragment>
