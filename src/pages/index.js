@@ -8,9 +8,9 @@ import SectionContent from '../components/sections/SectionContent';
 import TextColumns from '../components/textColumns/TextColumns';
 import VerticalRule from '../components/VerticalRule';
 import Newsletter from '../components/Newsletter';
+import scrollTo from '../utils/scrollTo';
 import {
   FaArrowAltCircleRight,
-  FaTwittter,
   FaInstagram,
   FaFacebookSquare,
   FaEnvelopeOpen,
@@ -49,6 +49,7 @@ export default function Home({data}) {
               <a
                 href="https://hopking.io/"
                 target="_blank"
+                rel="noreferrer"
                 title="Visit Jake's personal website"
               >
                 Jake Hopking
@@ -66,6 +67,7 @@ export default function Home({data}) {
             <a
               href="https://twitter.com/uitherapy"
               target="_blank"
+              rel="noreferrer"
               title="Twitter"
             >
               <FaTwitter />
@@ -75,6 +77,7 @@ export default function Home({data}) {
             <a
               href="https://instagram.com/uitherapy"
               target="_blank"
+              rel="noreferrer"
               title="Instagram"
             >
               <FaInstagram />
@@ -82,9 +85,7 @@ export default function Home({data}) {
           </li>
           <li className="social__item">
             <a
-              href="#"
-              target="_blank"
-              data-scroll-to="suggest"
+              onClick={() => scrollTo('#suggest')}
               title="Not sure I want a Facebook page. Let me know if you think it might be valuable..."
             >
               <FaFacebookSquare />
@@ -121,6 +122,7 @@ export default function Home({data}) {
           href="https://forms.gle/xAsyENsbhJbYg2wo6"
           className="btn btn--cta btn--inverse"
           target="_blank"
+          rel="noreferrer"
         >
           <div className="btn__text">Suggest an idea!</div>
           <FaArrowAltCircleRight className="btn__icon" />

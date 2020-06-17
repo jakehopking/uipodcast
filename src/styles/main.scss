@@ -24,6 +24,8 @@
 // ConvertKit form
 .formkit-form {
   border: none !important;
-  width: 50vw;
+  @include breakpoint(md) {
+    width: 50vw;
+  }
   min-height: 250px;
 }

@@ -1,4 +1,4 @@
-const path = require(`path`)
+const path = require(`path`);
 /**
  * Configure your Gatsby site with this file.
  *
@@ -15,7 +15,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: path.resolve("./src/layouts/layout-default.js"),
+          default: path.resolve('./src/layouts/layout-default.js'),
         },
       },
     },
@@ -33,12 +33,20 @@ module.exports = {
         path: path.join(__dirname, `src`, `images`),
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
     // Add a collection called "episodes" that looks
     // for files in episodes/
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "episodes",
+        name: 'episodes',
         path: path.join(__dirname, `src`, `content`, `episodes`),
       },
     },
@@ -60,4 +68,4 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
   ],
-}
+};

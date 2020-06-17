@@ -9,9 +9,9 @@ const Nav = () => {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
-  const toggleMenuTimeout = () => {
-    setTimeout(() => toggleMenu(), 600);
-  };
+  // const toggleMenuTimeout = () => {
+  //   setTimeout(() => toggleMenu(), 600);
+  // };
   const menuIconStyle = {
     fontSize: '26px',
   };
@@ -52,19 +52,19 @@ const Nav = () => {
               <Fragment>
                 <a
                   className="site-nav__link"
-                  onClick={() => scrollTo('#about', 'center')}
+                  onClick={() => scrollTo('#about', 'start')}
                 >
                   About
                 </a>
                 <a
                   className="site-nav__link"
-                  onClick={() => scrollTo('#connect', 'center')}
+                  onClick={() => scrollTo('#connect', 'start')}
                 >
                   Connect
                 </a>
                 <a
                   className="site-nav__link"
-                  onClick={() => scrollTo('#newsletter', 'center')}
+                  onClick={() => scrollTo('#newsletter', 'start')}
                 >
                   Newsletter
                 </a>

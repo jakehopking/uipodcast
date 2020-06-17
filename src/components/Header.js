@@ -1,7 +1,7 @@
 import React from 'react';
 import {useStaticQuery, Link, graphql} from 'gatsby';
-import Img from 'gatsby-image';
-import imgHeader from '../images/header.png';
+// import Img from 'gatsby-image';
+// import imgHeader from '../images/header.png';
 import imgLogo from '../images/logo-round.png';
 import Nav from './Nav';
 
@@ -29,9 +29,9 @@ export default function Header() {
 
   return (
     <header className="site-header">
-      <Nav></Nav>
+      <Nav />
       <Link to="/" className="site-header__logo">
-        <img src={imgLogo} />
+        <img src={imgLogo} alt="UI Therapy logo" />
       </Link>
       <div className="site-header__subtitle">
         <h1 className="padded-multiline title-background title-background--white">

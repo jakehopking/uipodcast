@@ -1,4 +1,4 @@
-import React, {useEffect, Fragment} from 'react';
+import React, {useEffect} from 'react';
 import SectionContent from '../components/sections/SectionContent';
 import PropTypes from 'prop-types';
 
