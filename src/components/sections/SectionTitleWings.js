@@ -19,7 +19,9 @@ const SectionTitleWings = ({
         </section>
       ) : (
         <section
-          className={`section section--title wings wings--${colour} ${className}`}
+          className={`${
+            className ? className : ''
+          } section section--title wings wings--${colour} `}
           id={id}
         >
           <img src={img} alt="Line break image" />

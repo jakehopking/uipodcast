@@ -30,7 +30,7 @@ const Newsletter = (props) => {
   }
 
   return (
-    <SectionContent id="newsletter" type="bleed" className="newsletter">
+    <SectionContent id="newsletter" size="bleed" className="newsletter">
       <div className="newsletter__title">
         <h2 className="section-title section-title--dark-bg px3 py2">
           Newsletter

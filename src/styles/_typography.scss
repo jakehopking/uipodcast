@@ -57,6 +57,43 @@ small,
   font-size: $font-size-small;
 }
 
+// Post styling
+.post-heading {
+  font-weight: $font-weight-bold;
+  position: relative;
+  color: #{$colour-pink};
+  margin-bottom: $base-spacing-unit * 2;
+  &::after {
+    --accent: white;
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background-color: var(--accent);
+  }
+  &--accent-blue {
+    &::after {
+      --accent: #{$colour-blue};
+    }
+  }
+  &--accent-pink {
+    &::after {
+      --accent: #{$colour-pink};
+    }
+  }
+}
+.post {
+  ul, ol {
+    margin-left: $base-spacing-unit;
+    margin-bottom: $base-spacing-unit;
+  }
+  ul {
+    list-style-type: disc;
+  }
+}
+
 // Anchors
 a {
   color: var(--colour-blue);
@@ -65,6 +102,15 @@ a {
   &:active {
     color: var(--colour-pink);
   }
+}
+
+hr {
+  border-top: 1px solid $colour-grey;
+  border-bottom: 1px solid $colour-body-bg;
+  height: 2px;
+  width: 100%;
+  border-left: none;
+  border-right: none;
 }
 
 .text-justify {

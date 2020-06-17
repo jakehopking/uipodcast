@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 const TextColumns = ({cols = 'two', className, children}) => {
   return (
-    <article className={`text-columns text-columns--${cols} ${className}`}>
+    <article
+      className={`text-columns text-columns--${cols} ${
+        className ? className : ''
+      }`}
+    >
       {children}
     </article>
   );

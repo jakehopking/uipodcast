@@ -8,6 +8,7 @@ import SectionTitleWings from '../components/sections/SectionTitleWings';
 import SectionContent from '../components/sections/SectionContent';
 import TextColumns from '../components/textColumns/TextColumns';
 import VerticalRule from '../components/VerticalRule';
+import PostHeading from '../components/PostHeading';
 import Newsletter from '../components/Newsletter';
 import PodcastServices from '../components/PodcastServices';
 import scrollTo from '../utils/scrollTo';
@@ -32,19 +33,19 @@ export default function Home({data}) {
       <SectionTitleWings id="listen" tag="h2">
         Listen
       </SectionTitleWings>
-      <SectionContent type="wide">
-        <PodcastServices />
-      </SectionContent>
-      <SectionContent className={'mb2'}>
-        <h3 className="my0">
-          <strong className="colour-pink font-weight-bold">
-            Latest episode
-            <span className="colour-blue display-block">&mdash;</span>
-          </strong>
-        </h3>
+
+      <SectionContent>
+        <PostHeading tag="h3" className="mt0">
+          Latest episode
+        </PostHeading>
         <h4 className="font-weight-light mt0" style={{lineHeight: 1.6}}>
-          {title}
-          <em style={{opacity: 0.4}}> &mdash; {date}</em>
+          <Link
+            to={path}
+            style={{color: 'white', textDecoration: 'none', display: 'block'}}
+          >
+            {title}
+            <em style={{opacity: 0.4}}> &mdash; {date}</em>
+          </Link>
         </h4>
         <ReactPlayer
           controls
@@ -57,6 +58,9 @@ export default function Home({data}) {
         <p>
           <Link to={path}>Show notes for this episode.</Link>
         </p>
+      </SectionContent>
+      <SectionContent>
+        <PodcastServices />
       </SectionContent>
       <SectionTitleWings id="about" tag="h2">
         About
