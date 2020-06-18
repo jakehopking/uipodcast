@@ -4,6 +4,9 @@ import LayoutDefault from '../layouts/layout-default';
 import SectionTitleWings from '../components/sections/SectionTitleWings';
 import SectionContent from '../components/sections/SectionContent';
 import EpisodeItem from '../components/EpisodeItem';
+import VerticalRule from '../components/VerticalRule';
+import PodcastServices from '../components/PodcastServices';
+import Newsletter from '../components/Newsletter';
 
 export default function Episodes({data}) {
   // Return filtered allMdx arr for expisodes only
@@ -13,13 +16,19 @@ export default function Episodes({data}) {
   return (
     <LayoutDefault>
       <SectionTitleWings tag="h2">Episodes</SectionTitleWings>
-      <SectionContent className={'mb6'}>
+      <SectionContent className={'mb3'}>
         <div className="episode-list">
           {episodes.map(({node}) => (
             <EpisodeItem props={node} key={node.id} />
           ))}
         </div>
       </SectionContent>
+      <SectionContent>
+        <PodcastServices />
+      </SectionContent>
+      <VerticalRule />
+      <Newsletter />
+      <VerticalRule />
     </LayoutDefault>
   );
 }

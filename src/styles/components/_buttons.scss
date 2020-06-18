@@ -26,6 +26,7 @@
   background-color: var(--colour-blue);
   color: var(--colour-body-bg);
   text-decoration: none;
+  transition: $transition-default-all;
   &:hover,
   &--active {
     color: white;
