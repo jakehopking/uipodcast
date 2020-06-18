@@ -1,7 +1,7 @@
 import React, {useState, useEffect, Fragment} from 'react';
 import {Link} from 'gatsby';
 import {FiMenu, FiX} from 'react-icons/fi';
-import scrollTo from '../utils/ScrollTo';
+import scrollTo from '../utils/scrollTo';
 
 const Nav = () => {
   const [showMenu, setShowMenu] = useState(true);

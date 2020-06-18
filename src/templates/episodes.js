@@ -3,6 +3,7 @@ import {graphql} from 'gatsby';
 import {MDXProvider} from '@mdx-js/react';
 import {MDXRenderer} from 'gatsby-plugin-mdx';
 import {Link} from 'gatsby';
+import {Helmet} from 'react-helmet';
 import ReactPlayer from 'react-player';
 import LayoutDefault from '../layouts/layout-default';
 import SectionTitleWings from '../components/sections/SectionTitleWings';
@@ -14,9 +15,12 @@ import PodcastServices from '../components/PodcastServices';
 
 const shortcodes = {Link}; // Provide common components here
 
-export default function EpisodeTemplate({data: {mdx}}) {
+export default function EpisodeTemplate({data: {mdx, site}}) {
   return (
     <LayoutDefault>
+      <Helmet>
+        <title>{`${site.siteMetadata.title} | ${mdx.frontmatter.title}`}</title>
+      </Helmet>
       <SectionTitleWings tag="h2">{`Episode ${mdx.frontmatter.episodeNo}`}</SectionTitleWings>
       <SectionContent>
         <PostHeading tag="h3" className="mt0">
@@ -62,6 +66,11 @@ export default function EpisodeTemplate({data: {mdx}}) {
 
 export const pageQuery = graphql`
   query EpisodeQuery($id: String) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     mdx(id: {eq: $id}) {
       id
       body

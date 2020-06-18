@@ -18,6 +18,8 @@ import {
   FaFacebookSquare,
   FaEnvelopeOpen,
   FaTwitter,
+  FaBookOpen,
+  FaPodcast,
 } from 'react-icons/fa';
 
 export default function Home({data}) {
@@ -55,9 +57,24 @@ export default function Home({data}) {
           wrapper="react-player"
           style={{marginBottom: '20px'}}
         />
-        <p>
-          <Link to={path}>Show notes for this episode.</Link>
-        </p>
+        <ul>
+          <li>
+            <Link to={path}>
+              <FaBookOpen
+                style={{marginRight: '8px', verticalAlign: 'middle'}}
+              />
+              Show notes for this episode.
+            </Link>
+          </li>
+          <li>
+            <Link to="/episodes/">
+              <FaPodcast
+                style={{marginRight: '8px', verticalAlign: 'middle'}}
+              />
+              View all episodes
+            </Link>
+          </li>
+        </ul>
       </SectionContent>
       <SectionContent>
         <PodcastServices />
@@ -173,11 +190,12 @@ export const query = graphql`
         node {
           id
           frontmatter {
-            title
-            path
             category
             date(formatString: "DD MMMM, YYYY")
             podcastUrl
+            path
+            tags
+            title
           }
           fields {
             slug

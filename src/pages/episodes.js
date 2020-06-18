@@ -1,6 +1,7 @@
 import React from 'react';
 import {graphql, Link} from 'gatsby';
 import LayoutDefault from '../layouts/layout-default';
+import SectionTitleWings from '../components/sections/SectionTitleWings';
 import SectionContent from '../components/sections/SectionContent';
 
 export default function Episodes({data}) {
@@ -10,6 +11,7 @@ export default function Episodes({data}) {
   return (
     <LayoutDefault>
       {/* <h1>About {data.site.siteMetadata.title}</h1> */}
+      <SectionTitleWings tag="h2">Episodes</SectionTitleWings>
       <SectionContent className={'mb6'}>
         <h4>{episodes.length} Episode</h4>
         {episodes.map(({node}) => (
@@ -35,21 +37,18 @@ export default function Episodes({data}) {
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
       totalCount
       edges {
         node {
           id
           frontmatter {
-            title
-            path
             category
             date(formatString: "DD MMMM, YYYY")
+            path
+            podcastUrl
+            tags
+            title
           }
           fields {
             slug

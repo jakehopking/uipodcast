@@ -424,7 +424,7 @@
   }
 }
 .hide-xl {
-  @include breakpoint(xl_only) {
+  @include breakpoint(xl) {
     display: none;
   }
 }

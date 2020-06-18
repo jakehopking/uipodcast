@@ -7,8 +7,12 @@ const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
-    title: `UI Therapy`,
+    author: `Jake Hopking`,
+    keywords: `user interface, podcast, design, development, programming, coding, code, ui, user experience, ux, framework, interviews, expertise`,
+    image: `${__dirname}/src/images/logo-square.jpg`,
     subTitle: `The podcast for designers, developers and independent thinkers`,
+    title: `UI Therapy`,
+    url: `https://uitherapy.fm`,
   },
   plugins: [
     {
@@ -65,6 +69,7 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
   ],
