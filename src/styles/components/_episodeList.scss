@@ -1,0 +1,81 @@
+.episode-list {
+  display: flex;
+  flex-direction: column;
+  &__item {
+    > * {transition: all ease-in-out 0.3s;}
+    display: flex;
+    flex-direction: column-reverse;
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
+  }
+  &__item + &__item {
+    margin-top: 30px;
+    @include breakpoint(md) {
+      margin-top: 15px;
+    }
+  }
+  
+  &__meta {
+    display: flex;
+    background-color: $colour-body-bg;
+    flex-direction: column;
+    flex-basis: auto;
+    border-bottom: 4px solid $colour-blue;
+    padding: 10px;
+    align-items: flex-start;
+    @include breakpoint(md) {
+      border-left: 4px solid $colour-blue;
+      flex-direction: column;
+      flex: 0 0 150px;
+      align-items: stretch;
+      border-bottom: none;
+    }
+  }
+  &__number {
+    color: $colour-pink;
+  }
+  &__date {
+    color: white;
+  }
+  &__format {
+    margin-top: $half-spacing-unit;
+    @include breakpoint(md) {
+      margin-top: auto;
+    }
+  }
+  
+  &__info {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    background-color: $colour-grey;
+    flex: 1 1 auto;
+    padding: 15px;
+  }
+  &__excerpt {
+    opacity: 0.6;
+  }
+}
+
+.episode-list__item {
+  text-decoration: none;
+  &:hover {
+    .episode-list__meta {
+      border-bottom-color: $colour-pink;
+      @include breakpoint(md) {
+        border-left-color: $colour-pink;
+      }
+    }
+    .episode-list__info {
+      color: $colour-body-bg;
+      background-color: $colour-blue;
+    }
+    .episode-list__excerpt {
+      opacity: 1;
+    }
+    .episode-list__format {
+      background-color: $colour-pink;
+    }
+  }
+}
