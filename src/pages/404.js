@@ -13,9 +13,9 @@ import Newsletter from '../components/Newsletter';
 
 export default function Episodes({data}) {
   // Return filtered allMdx arr for expisodes only
-  const episodes = data.allMdx.edges.filter(
-    ({node}) => node.frontmatter.category === 'episode'
-  );
+  const episodes = data.allMdx.edges
+    .filter(({node}) => node.frontmatter.category === 'episode')
+    .slice(0, 5);
   return (
     <LayoutDefault>
       <Helmet>
