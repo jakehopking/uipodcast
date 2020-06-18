@@ -8,8 +8,8 @@ const path = require(`path`);
 module.exports = {
   siteMetadata: {
     author: `Jake Hopking`,
+    description: `The UI Therapy podcast is about cutting through the cacophony of differing opinions about which method, framework or language is best. Instead I aim to provide listeners with clarity and simplicity by offering battle-tested use cases and recommendations that have their feet firmly rooted in simplicity and longevity. I also aim to interview leading developers, designers and other professionals who can share insights and processes applicable to our community and industry. Basically, despite my 20 years of professional experience, I find myself getting increasingly slowed down and fatigued by all the new ‘must use’ tooling and frameworks that keep springing up — I want to provide some help and group therapy for everyone who finds themselves increasingly paralysed by language, framework or methodology analysis.`,
     keywords: `user interface, podcast, design, development, programming, coding, code, ui, user experience, ux, framework, interviews, expertise`,
-    image: `${__dirname}/src/images/logo-square.jpg`,
     subTitle: `The podcast for designers, developers and independent thinkers`,
     title: `UI Therapy`,
     url: `https://uitherapy.fm`,

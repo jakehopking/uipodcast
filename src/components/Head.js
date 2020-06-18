@@ -10,7 +10,7 @@ const Head = () => {
         site {
           siteMetadata {
             author
-            image
+            description
             keywords
             subTitle
             title
@@ -24,7 +24,7 @@ const Head = () => {
   const {
     author,
     keywords,
-    image,
+    description,
     subTitle,
     title,
     url,
@@ -32,10 +32,10 @@ const Head = () => {
 
   return (
     <Helmet>
-      <title>{title}</title>
+      <title>{`${title} | ${subTitle}`}</title>
       <link rel="canonical" href={url} />
 
-      <meta name="description" content={`${title} | ${subTitle}`} />
+      <meta name="description" content={`${description}`} />
       <meta name="keywords" content={keywords} />
 
       <meta name="author" content={author} />
