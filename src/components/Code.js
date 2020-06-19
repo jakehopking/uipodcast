@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Highlight, {defaultProps} from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/dracula';
+import theme from 'prism-react-renderer/themes/synthwave84';
 // import {LiveEditor, LiveError, LivePreview, LiveProvider} from 'react-live';
 // import styled from 'styled-components';
 import styled from '@emotion/styled';
@@ -38,8 +38,10 @@ const CopyCode = styled.button`
   border-bottom-right-radius: 0px;
   opacity: 0.6;
   background-color: var(--colour-blue);
+  transition: all ease-in-out 0.3s;
   &:hover {
     opacity: 1;
+    background-color: var(--colour-pink);
   }
   &:focus {
     outline: none;
