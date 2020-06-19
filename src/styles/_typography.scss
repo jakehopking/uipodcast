@@ -57,6 +57,17 @@ small,
   font-size: $font-size-small;
 }
 
+code, pre {
+  font-family: $font-face-mono;
+}
+
+code {
+  // prism-react-renderer/themes/dracula
+  background-color: rgb(40, 42, 54);
+  color: $colour-pink;
+  padding: 0 4px;
+}
+
 // Post styling
 .post-heading {
   font-weight: $font-weight-bold;
