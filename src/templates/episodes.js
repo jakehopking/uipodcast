@@ -20,7 +20,34 @@ export default function EpisodeTemplate({data: {mdx, site}}) {
   return (
     <LayoutDefault>
       <Helmet>
-        <title>{`${site.siteMetadata.title} | ${mdx.frontmatter.title}`}</title>
+        <title>{`${mdx.frontmatter.title} | ${site.siteMetadata.title} Podcast Episode ${mdx.frontmatter.episodeNo}`}</title>
+        <meta
+          property="og:audio"
+          content={`${site.siteMetadata.url}${mdx.frontmatter.podcastUrl}`}
+        />
+        <meta property="og:audio:type" content="audio/mp3" />
+        <meta
+          property="og:title"
+          content={`${mdx.frontmatter.title} - ${site.siteMetadata.title}  Podcast Episode ${mdx.frontmatter.episodeNo}`}
+        />
+        <meta
+          property="og:description"
+          content={`${site.siteMetadata.title} | ${site.siteMetadata.subTitle}`}
+        />
+        <meta property="og:type" content="music.song" />
+        <meta
+          property="og:url"
+          content={`${site.siteMetadata.url}${mdx.frontmatter.path}`}
+        />
+        {`<!-- Twitter -->`}
+        <meta
+          name="twitter:title"
+          content={`${mdx.frontmatter.title} - ${site.siteMetadata.title}  Podcast Episode ${mdx.frontmatter.episodeNo}`}
+        />
+        <meta
+          name="twitter:description"
+          content={`${site.siteMetadata.title} | ${site.siteMetadata.subTitle}`}
+        />
       </Helmet>
       <SectionTitleWings tag="h2">{`Episode ${mdx.frontmatter.episodeNo}`}</SectionTitleWings>
       <SectionContent>
@@ -83,7 +110,9 @@ export const pageQuery = graphql`
   query EpisodeQuery($id: String) {
     site {
       siteMetadata {
+        subTitle
         title
+        url
       }
     }
     mdx(id: {eq: $id}) {
@@ -94,7 +123,9 @@ export const pageQuery = graphql`
         title
         podcastUrl
         date(formatString: "DD MMMM, YYYY")
+        path
       }
+      excerpt
     }
   }
 `;
