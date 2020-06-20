@@ -18,7 +18,7 @@ const EpisodeItem = ({props: {...node}}) => {
       <div className="episode-list__info">
         <div className="episode-list__title h4 mb2">{frontmatter.title}</div>
         <div className="episode-list__excerpt font-weight-light">
-          <em>{excerpt}</em>
+          <em>{excerpt.replace('Show notes ', '')}</em>
         </div>
       </div>
     </Link>
