@@ -61,6 +61,12 @@ code, pre {
   font-family: $font-face-mono;
 }
 
+pre code {
+  background-color: transparent;
+  display: block;
+  margin: 30px 0 10px 0;
+}
+
 code {
   // prism-react-renderer/themes/dracula
   background-color: rgb(40, 42, 54);
