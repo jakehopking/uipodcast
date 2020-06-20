@@ -20,9 +20,6 @@ const Nav = () => {
   // const toggleMenuTimeout = () => {
   //   setTimeout(() => toggleMenu(), 600);
   // };
-  const menuIconStyle = {
-    fontSize: '26px',
-  };
 
   const toggleMenuActive = showMenu ? 'site-nav__toggle--active' : '';
 
@@ -33,11 +30,7 @@ const Nav = () => {
           className={`site-nav__toggle ${toggleMenuActive}`}
           onClick={toggleMenu}
         >
-          {showMenu ? (
-            <FiX style={menuIconStyle} />
-          ) : (
-            <FiMenu style={menuIconStyle} />
-          )}
+          {showMenu ? <FiX /> : <FiMenu />}
         </a>
         {showMenu && (
           <div className="site-nav__menu">
