@@ -2,30 +2,41 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ButtonAnchor = ({
-  url,
+  tag = 'a',
+  href,
+  to,
   className,
   icon = null,
   iconPosition = 'left',
   children,
 }) => {
+  const Tag = tag;
   switch (iconPosition) {
     case 'right':
       return (
-        <a href={url} className={`btn ${className}`}>
+        <Tag to={to} href={href} className={`btn ${className}`}>
           <div className="btn__text">{children}</div>
           <div className="btn__icon">{icon}</div>
-        </a>
+        </Tag>
       );
     default:
       return (
-        <a href={url} className={`btn ${className}`}>
+        <Tag to={to} href={href} className={`btn ${className}`}>
           <div className="btn__icon">{icon}</div>
           <div className="btn__text">{children}</div>
-        </a>
+        </Tag>
       );
   }
 };
 
-ButtonAnchor.propTypes = {};
+ButtonAnchor.propTypes = {
+  tag: PropTypes.string,
+  href: PropTypes.string,
+  link: PropTypes.string,
+  className: PropTypes.string,
+  icon: PropTypes.string,
+  iconPosition: PropTypes.string,
+  children: PropTypes.array,
+};
 
 export default ButtonAnchor;

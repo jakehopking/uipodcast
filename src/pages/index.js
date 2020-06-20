@@ -11,6 +11,9 @@ import VerticalRule from '../components/VerticalRule';
 import PostHeading from '../components/PostHeading';
 import Newsletter from '../components/Newsletter';
 import PodcastServices from '../components/PodcastServices';
+import EpisodeItem from '../components/EpisodeItem';
+import ButtonAnchor from '../components/ButtonAnchor';
+
 import scrollTo from '../utils/scrollTo';
 import {
   FaArrowAltCircleRight,
@@ -27,6 +30,7 @@ export default function Home({data}) {
   const episodes = data.allMdx.edges.filter(
     ({node}) => node.frontmatter.category === 'episode'
   );
+  const latestEpisode = episodes[0].node;
   // Destructure podcast url, title and post url from frontmatter
   const {podcastUrl, title, path, date} = episodes[0].node.frontmatter;
 
@@ -40,41 +44,23 @@ export default function Home({data}) {
         <PostHeading tag="h3" className="mt0">
           Latest episode
         </PostHeading>
-        <h4 className="font-weight-light mt0" style={{lineHeight: 1.6}}>
-          <Link
-            to={path}
-            style={{color: 'white', textDecoration: 'none', display: 'block'}}
-          >
-            {title}
-            <em style={{opacity: 0.4}}> &mdash; {date}</em>
-          </Link>
-        </h4>
+        <EpisodeItem props={latestEpisode} />
         <ReactPlayer
           controls
           url={podcastUrl}
           width="100%"
           height="50px"
           wrapper="react-player"
-          style={{marginBottom: '20px'}}
+          style={{marginBottom: '20px', marginTop: '20px'}}
         />
-        <ul>
-          <li>
-            <Link to={path}>
-              <FaBookOpen
-                style={{marginRight: '8px', verticalAlign: 'middle'}}
-              />
-              Show notes for this episode.
-            </Link>
-          </li>
-          <li>
-            <Link to="/episodes/">
-              <FaPodcast
-                style={{marginRight: '8px', verticalAlign: 'middle'}}
-              />
-              View all episodes
-            </Link>
-          </li>
-        </ul>
+        <ButtonAnchor
+          className="btn--round btn--inverse mx-auto"
+          tag={Link}
+          to={'/episodes/'}
+          icon={<FaPodcast />}
+        >
+          View all episodes
+        </ButtonAnchor>
       </SectionContent>
       <SectionContent>
         <PodcastServices />
@@ -84,7 +70,7 @@ export default function Home({data}) {
       </SectionTitleWings>
       <SectionContent className={'mb6'}>
         <TextColumns>
-          <p className="lead first-letter first-letter text-justify font-sans font-weight-light">
+          <p className=" first-letter first-letter text-justify font-weight-light">
             The <acronym title="User Interface">UI</acronym> Therapy podcast is
             about cutting through the cacophony of differing opinions about
             which method, framework or language is best. Instead I aim to
@@ -166,7 +152,7 @@ export default function Home({data}) {
       </SectionTitleWings>
       <SectionContent>
         <article>
-          <p className="lead-plus text-center font-sans font-weight-light">
+          <p className="lead-plus text-center  font-weight-light">
             Do you have an idea for the show, can you think of some industry
             experts that would benefit the design and developer community to
             learn from or perhaps you’d like to appear as a guest yourself!
@@ -192,6 +178,8 @@ export const query = graphql`
           frontmatter {
             category
             date(formatString: "DD MMMM, YYYY")
+            episodeNo
+            format
             podcastUrl
             path
             tags

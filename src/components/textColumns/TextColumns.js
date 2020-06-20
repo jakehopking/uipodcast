@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TextColumns = ({cols = 'two', className, children}) => {
+const TextColumns = ({columns = 'two', className, children}) => {
   return (
     <article
-      className={`text-columns text-columns--${cols} ${
+      className={`text-columns text-columns--${columns} ${
         className ? className : ''
       }`}
     >

@@ -56,7 +56,7 @@ const PodcastServices = (props) => {
         <ButtonAnchor
           key={index}
           className="btn--podcast"
-          url={url}
+          href={url}
           icon={<Icon />}
         >
           {title}
