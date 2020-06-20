@@ -8,11 +8,11 @@ import Footer from '../components/Footer';
 
 import '../styles/main.scss';
 
-export default function LayoutDefault({children}) {
+export default function LayoutDefault({type = 'subpage', children}) {
   return (
     <IconContext.Provider value={{className: 'react-icons'}}>
       <Head />
-      <div className="site-wrapper" id="top">
+      <div className={`site-wrapper site-wrapper--${type}`} id="top">
         <Header />
         <main className="site-main">{children}</main>
         <Footer />

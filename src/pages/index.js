@@ -31,7 +31,7 @@ export default function Home({data}) {
   const {podcastUrl, title, path, date} = episodes[0].node.frontmatter;
 
   return (
-    <LayoutDefault>
+    <LayoutDefault type="index">
       <SectionTitleWings id="listen" tag="h2">
         Listen
       </SectionTitleWings>
