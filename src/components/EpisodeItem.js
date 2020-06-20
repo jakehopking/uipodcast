@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'gatsby';
-import PropTypes from 'prop-types';
 
 const EpisodeItem = ({props: {...node}}) => {
   const {frontmatter, excerpt} = node;
@@ -24,7 +23,5 @@ const EpisodeItem = ({props: {...node}}) => {
     </Link>
   );
 };
-
-EpisodeItem.propTypes = {};
 
 export default EpisodeItem;

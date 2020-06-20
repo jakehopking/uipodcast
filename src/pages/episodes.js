@@ -1,5 +1,5 @@
 import React from 'react';
-import {graphql, Link} from 'gatsby';
+import {graphql} from 'gatsby';
 import LayoutDefault from '../layouts/layout-default';
 import SectionTitleWings from '../components/sections/SectionTitleWings';
 import SectionContent from '../components/sections/SectionContent';

@@ -21,7 +21,6 @@ import {
   FaFacebookSquare,
   FaEnvelopeOpen,
   FaTwitter,
-  FaBookOpen,
   FaPodcast,
 } from 'react-icons/fa';
 
@@ -32,7 +31,7 @@ export default function Home({data}) {
   );
   const latestEpisode = episodes[0].node;
   // Destructure podcast url, title and post url from frontmatter
-  const {podcastUrl, title, path, date} = episodes[0].node.frontmatter;
+  const {podcastUrl} = episodes[0].node.frontmatter;
 
   return (
     <LayoutDefault type="index">

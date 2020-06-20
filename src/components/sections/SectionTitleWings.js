@@ -24,7 +24,7 @@ const SectionTitleWings = ({
           } section section--title wings wings--${colour} `}
           id={id}
         >
-          <img src={img} alt="Line break image" />
+          <img src={img} alt="Line break" />
         </section>
       )}
     </Fragment>

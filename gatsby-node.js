@@ -1,44 +1,44 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require(`path`);
+const {createFilePath} = require(`gatsby-source-filesystem`);
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
+exports.onCreateNode = ({node, getNode, actions}) => {
+  const {createNodeField} = actions;
 
   // General MDX pages
   if (node.internal.type === `Mdx` && node.frontmatter.category === `page`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    const slug = createFilePath({node, getNode, basePath: `pages`});
     createNodeField({
       node,
       name: `slug`,
       value: slug,
-    })
+    });
   }
 
   // Episode MDX pages
   else if (
-    node.internal.type === "Mdx" &&
+    node.internal.type === 'Mdx' &&
     node.frontmatter.category === `episode`
   ) {
     const slug = createFilePath({
       node,
       getNode,
       basePath: `content`,
-    })
+    });
     createNodeField({
       name: `slug`,
       node,
       value: slug,
-    })
+    });
   }
-}
+};
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
+exports.createPages = async ({graphql, actions, reporter}) => {
   // Destructure the createPage function from the actions object
-  const { createPage } = actions
+  const {createPage} = actions;
 
   const pages = await graphql(`
     query {
-      allMdx(filter: { frontmatter: { category: { eq: "page" } } }) {
+      allMdx(filter: {frontmatter: {category: {eq: "page"}}}) {
         edges {
           node {
             id
@@ -52,11 +52,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
     }
-  `)
+  `);
   if (pages.errors) {
-    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
+    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
   }
-  pages.data.allMdx.edges.forEach(({ node }) => {
+  pages.data.allMdx.edges.forEach(({node}) => {
     createPage({
       path: node.frontmatter.path || node.fields.slug,
       component: path.resolve(`./src/templates/pages.js`),
@@ -64,13 +64,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: node.fields.slug,
+        id: node.id,
       },
-    })
-  })
+    });
+  });
 
   const episodes = await graphql(`
     query {
-      allMdx(filter: { frontmatter: { category: { eq: "episode" } } }) {
+      allMdx(filter: {frontmatter: {category: {eq: "episode"}}}) {
         edges {
           node {
             id
@@ -84,10 +85,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
     }
-  `)
+  `);
   // Create episode pages.
   // you'll call `createPage` for each episode
-  episodes.data.allMdx.edges.forEach(({ node }, index) => {
+  episodes.data.allMdx.edges.forEach(({node}, index) => {
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
@@ -96,7 +97,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve(`./src/templates/episodes.js`),
       // You can use the values in this context in
       // our page layout component
-      context: { id: node.id },
-    })
-  })
-}
+      context: {id: node.id},
+    });
+  });
+};
