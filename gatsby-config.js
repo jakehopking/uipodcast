@@ -1,4 +1,4 @@
-const path = require(`path`);
+// const path = require(`path`);
 /**
  * Configure your Gatsby site with this file.
  *
@@ -19,7 +19,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: path.resolve('./src/layouts/layout-default.js'),
+          default: `${__dirname}/src/layouts/layout-default.js`,
         },
       },
     },
@@ -34,7 +34,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`),
+        path: `${__dirname}/src/images/`,
+        // path: path.join(__dirname, `src`, `images`),
       },
     },
     {
@@ -51,15 +52,10 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'episodes',
-        path: path.join(__dirname, `src`, `content`, `episodes`),
+        path: `${__dirname}/src/content/episodes/`,
+        // path: path.join(__dirname, `src`, `content`, `episodes`),
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-typography`,
-    //   options: {
-    //     pathToConfigModule: `src/utils/typography`,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

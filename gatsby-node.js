@@ -8,15 +8,15 @@ exports.onCreateNode = ({node, getNode, actions}) => {
   if (node.internal.type === `Mdx` && node.frontmatter.category === `page`) {
     const slug = createFilePath({node, getNode, basePath: `pages`});
     createNodeField({
-      node,
       name: `slug`,
+      node,
       value: slug,
     });
   }
 
   // Episode MDX pages
   else if (
-    node.internal.type === 'Mdx' &&
+    node.internal.type === `Mdx` &&
     node.frontmatter.category === `episode`
   ) {
     const slug = createFilePath({
