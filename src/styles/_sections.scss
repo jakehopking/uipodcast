@@ -43,14 +43,10 @@
     display: block;
     content: '';
     height: 1px;
-    background: linear-gradient(
-      to var(--direction, left),
-      var(--colour, var(--colour-pink)),
-      transparent
-    );
+    background: linear-gradient(to left, var(--colour, var(--colour-pink)), transparent);
   }
   &:after {
-    --direction: right;
+    background: linear-gradient(to right, var(--colour, var(--colour-pink)), transparent);
   }
 
   &--white {
