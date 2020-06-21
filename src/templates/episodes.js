@@ -119,11 +119,12 @@ export const pageQuery = graphql`
       id
       body
       frontmatter {
-        episodeNo
-        title
-        podcastUrl
         date(formatString: "DD MMMM, YYYY")
+        episodeNo
+        podcastUrl
         path
+        tags
+        title
       }
       excerpt
     }
