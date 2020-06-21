@@ -7,9 +7,9 @@ import LayoutDefault from '../layouts/layout-default';
 
 const shortcodes = {Link}; // Provide common components here
 
-export default function PageTemplate({data: {mdx}}) {
+export default function DefaultTemplate({data: {mdx}, props}) {
   return (
-    <LayoutDefault>
+    <LayoutDefault {...props}>
       <h1>{mdx.frontmatter.title}</h1>
       <MDXProvider components={shortcodes}>
         <MDXRenderer>{mdx.body}</MDXRenderer>

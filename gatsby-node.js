@@ -59,12 +59,11 @@ exports.createPages = async ({graphql, actions, reporter}) => {
   pages.data.allMdx.edges.forEach(({node}) => {
     createPage({
       path: node.frontmatter.path || node.fields.slug,
-      component: path.resolve(`./src/templates/pages.js`),
+      component: path.resolve(`./src/templates/default.js`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: node.fields.slug,
-        id: node.id,
       },
     });
   });

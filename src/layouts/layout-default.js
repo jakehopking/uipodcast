@@ -8,7 +8,8 @@ import Footer from '../components/Footer';
 
 import '../styles/main.scss';
 
-export default function LayoutDefault({type = 'subpage', children}) {
+export default function LayoutDefault(props) {
+  const {type = 'subpage', children} = props;
   return (
     <IconContext.Provider value={{className: 'react-icons'}}>
       <Head />

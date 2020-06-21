@@ -5,9 +5,10 @@ import scrollTo from '../utils/scrollTo';
 
 const Nav = () => {
   const [showMenu, setShowMenu] = useState(true);
-
+  const [location, setLocation] = useState('');
   // Hide menu on load if mobile
   useEffect(() => {
+    setLocation(window.location.pathname);
     if (window.innerWidth < 768) {
       setShowMenu(false);
     }
@@ -49,7 +50,7 @@ const Nav = () => {
             >
               Episodes
             </Link>
-            {window.location.pathname === '/' && (
+            {location === '/' && (
               <Fragment>
                 <a
                   className="site-nav__link"

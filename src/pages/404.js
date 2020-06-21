@@ -1,5 +1,5 @@
 import React from 'react';
-import {graphql} from 'gatsby';
+import {Link, graphql} from 'gatsby';
 import {Helmet} from 'react-helmet';
 import scrollTo from '../utils/scrollTo';
 import LayoutDefault from '../layouts/layout-default';
@@ -29,8 +29,10 @@ export default function Episodes({data}) {
         <p>However, please don't allow that to make this a wasted journey.</p>
         <p>
           May I kindly suggest that you signup for my{' '}
-          <a onClick={() => scrollTo('#newsletter', 'start')}>newsletter</a>,
-          and I promise to send you some cool stuff that will make this page's
+          <Link onClick={() => scrollTo('#newsletter', 'start')}>
+            newsletter
+          </Link>
+          , and I promise to send you some cool stuff that will make this page's
           inconvenience a little less painful.
         </p>
         <p>Or how about listening to one of my smashing episodes? 👇</p>

@@ -30,13 +30,13 @@ const ButtonAnchor = ({
 };
 
 ButtonAnchor.propTypes = {
-  tag: PropTypes.string,
+  tag: PropTypes.any,
   href: PropTypes.string,
   link: PropTypes.string,
   className: PropTypes.string,
-  icon: PropTypes.string,
+  icon: PropTypes.any,
   iconPosition: PropTypes.string,
-  children: PropTypes.array,
+  children: PropTypes.any,
 };
 
 export default ButtonAnchor;
