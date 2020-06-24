@@ -67,6 +67,11 @@ pre code {
   margin: 30px 0 10px 0;
 }
 
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
 code {
   // prism-react-renderer/themes/dracula
   background-color: rgb(40, 42, 54);

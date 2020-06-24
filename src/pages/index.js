@@ -22,6 +22,7 @@ import {
   FaEnvelopeOpen,
   FaTwitter,
   FaPodcast,
+  FaPatreon,
 } from 'react-icons/fa';
 
 export default function Home({data}) {
@@ -105,6 +106,16 @@ export default function Home({data}) {
         <ul className="social">
           <li className="social__item">
             <a
+              href="https://www.patreon.com/uitherapy"
+              target="_blank"
+              rel="noreferrer"
+              title="Patreon"
+            >
+              <FaPatreon />
+            </a>
+          </li>
+          <li className="social__item">
+            <a
               href="https://twitter.com/uitherapy"
               target="_blank"
               rel="noreferrer"
@@ -121,14 +132,6 @@ export default function Home({data}) {
               title="Instagram"
             >
               <FaInstagram />
-            </a>
-          </li>
-          <li className="social__item">
-            <a
-              onClick={() => scrollTo('#suggest')}
-              title="Not sure I want a Facebook page. Let me know if you think it might be valuable..."
-            >
-              <FaFacebookSquare />
             </a>
           </li>
           <li className="social__item">

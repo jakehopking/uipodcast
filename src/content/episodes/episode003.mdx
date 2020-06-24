@@ -35,6 +35,9 @@ We then move on to Pika itself. In 2018 it started as a catalog that focussed on
 
 We talk about the Pika CDN which does some very cool stuff around only returning the correct JS code, based on the browser that requested it. For instance, not bloating code with browser polyfills for modern browsers. We also explore the awesome possibilities of simply using the Pika CDN to import the packages you need for a project using ESM, and then offline installation of packages with NPM etc wouldn’t be necessary. Really powerful. The eventual goal is to perhaps leverage the Pika CDN with Snowpack itself. Fred floats the idea of this as V3, for example one could simply reference the react package by name, and not url, and then Snowpack could fetch the ESM and cache it in the browser. Take a look at a package on the CDN for examples of how to use.
 
+**Example 'how to use' in package on Pika CDN**
+[https://cdn.pika.dev/react](https://cdn.pika.dev/react)
+
 ```js
 /*
  *  Pika CDN - react@16.13.1
@@ -71,6 +74,8 @@ Don’t feel shame in using simple HTML/CSS/Vanilla JS to start your project. Th
 
 Finally we talk about non-JS build tools to help in exponentially increasing build times in the JS world. ESBuild is a great example of this, which is **~337X**, yes that’s not a typo, faster than Parcel for instance. Another example is SWC.
 
+---
+
 ## Links
 
 - [Fred Schott](https://fredkschott.com/)
@@ -100,5 +105,3 @@ Finally we talk about non-JS build tools to help in exponentially increasing bui
 - [ESNEXTCONF](https://www.esnextconf.com/)
 - [ES Build](https://github.com/evanw/esbuild)
 - [SWC](https://github.com/swc-project/swc)
-
----
