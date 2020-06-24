@@ -45,7 +45,7 @@ const PodcastServices = (props) => {
     },
     {
       title: 'RSS',
-      url: 'https://buzzsprout.com/',
+      url: 'https://feeds.buzzsprout.com/1180283.rss',
       icon: Rss,
     },
   ];

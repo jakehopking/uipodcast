@@ -95,6 +95,17 @@ export default function EpisodeTemplate({data: {mdx, site}}) {
         >
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
+        <hr />
+        <p className="mt3 text-center">
+          If you can, please support the show:{' '}
+          <a
+            href="https://www.patreon.com/uitherapy"
+            target="_blank"
+            rel="noreferrer"
+          >
+            https://www.patreon.com/uitherapy
+          </a>
+        </p>
       </SectionContent>
       <SectionContent>
         <PodcastServices />
