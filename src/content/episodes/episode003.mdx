@@ -1,0 +1,107 @@
+---
+category: episode
+date: '2020-06-24'
+episodeNo: 3
+format: interview
+path: /episodes/3
+podcastUrl: https://www.buzzsprout.com/1180283/4306088-snowpack-and-pika-the-next-generation-of-bundler-package-manager-and-cdn-for-the-modern-web-with-fred-k-schott.mp3
+tags:
+  [
+    'development',
+    'interview',
+    'javascript',
+    'tooling',
+    'esm',
+    'bundlers',
+    'npm',
+    'node',
+  ]
+title: 'Snowpack and Pika: the next generation of bundler, package manager and CDN for the modern Web with Fred K Schott'
+---
+
+## Show notes
+
+The first two minutes before the episode ‘officially’ starts we talk a bit about why I’m creating this podcast, and then talk about how Fred started on his Pika journey. It’s nice content so I’ve included (note, that the recording quality for Fred during this segment is lower quality.
+Fred talks about how he got into programming, and goes on to talk about his time at Google working on Polymer, the native components system for the Web. At this time JS was going through a similar transformation (think ES6 and ES Modules, which is for allowing the browser to import modules), which contrasted to the ES5 way of a single document with hierarchical organisation, was a paradigm shift for JS. Pika began as a way to explore this new technology. The old world of ES5 however did allow for an immediate feedback loop of write/reload/see changes applied (this was lost with NPM and bundlers). ES6 created the opportunity to re-enable this instant feedback loop, and Pika’s focus is to make that happen.
+
+Fred makes a great point about NPM, and despite some of its faults, it’s a great system because for the first time in JS it allowed for a common approach to accessing and importing packages (see the talk Fred mentions links below), however all the packages are build to run in Node.js first, and not the Web, so bundlers are necessary to make that a reality. Node.js came first, and the Web came to Node.js for its package library.
+We start talking about how Snowpack works. For example, it will take the folder of react from NPM and create a single react.js and add it to a web_modules folder, which the browser can then cache. Then on any subsequent saves of your project, this file isn’t re-compiled (the browser just loads it from cache again, until a new release of react for instance) - This is done in the background with Rollup.
+
+Bundlers are obviously great for production - they remove dead and duplicate code, and concat files to reduce requests etc, but we should be able to add bundling when we are ready for that point in the dev process, and not be forced to use heavy webpack configs or, for instance, create-react-app starter projects just to get started.
+The beauty of Snowpack is that it outputs simple JS/CSS/HTML assets as default, so that when it comes to needing a bundler for production, all the complexity of compiling sass to css, ts/jsx to js has been completed, so actually writing a config for these native technologies is relatively easy now.
+
+We discuss why SASS support isn’t natively built into Snowpack. He hopes to get it integrated in the future. The main issue around integration is that it’s difficult to invalidate the SASS build due to things like partials in the language, which are essentially injected into the components at build time. Snowpack’s focus is only building when things change, and because of the way the SASS bundler works, it’s very difficult to invalidate the whole built application because it’s very difficult to know where that partial is injected.
+We then move on to Pika itself. In 2018 it started as a catalog that focussed on packages from NPM that were built for the web.
+
+We talk about the Pika CDN which does some very cool stuff around only returning the correct JS code, based on the browser that requested it. For instance, not bloating code with browser polyfills for modern browsers. We also explore the awesome possibilities of simply using the Pika CDN to import the packages you need for a project using ESM, and then offline installation of packages with NPM etc wouldn’t be necessary. Really powerful. The eventual goal is to perhaps leverage the Pika CDN with Snowpack itself. Fred floats the idea of this as V3, for example one could simply reference the react package by name, and not url, and then Snowpack could fetch the ESM and cache it in the browser. Take a look at a package on the CDN for examples of how to use.
+
+**Example 'how to use' in package on Pika CDN**
+[https://cdn.pika.dev/react](https://cdn.pika.dev/react)
+
+```js
+/*
+ *  Pika CDN - react@16.13.1
+ *  📦 https://www.pika.dev/npm/react
+ *  💁 https://www.pika.dev/cdn
+ *
+ *  How it works:
+ *    1. Import this file directly from your project (see examples).
+ *    2. The browser will automatically fetch the optimized packages from the export statements below.
+ *    3. Modern browsers get faster, modern code without the unnecessary transpilation & polyfills.
+ *
+ *  Examples:
+ *    - import {Component, render} from 'https://cdn.pika.dev/preact@^10.0.0';
+ *    - import {Component, render} from 'https://cdn.pika.dev/preact@10.0.2';
+ *    - import {Component, render} from 'https://cdn.pika.dev/preact@next';
+ *    - import {Component, render} from 'https://cdn.pika.dev/preact';
+ *    - const {Component, render} = await import('https://cdn.pika.dev/preact@^10.0.0');
+ *
+ *  Support for Package Exports: (Experimental - https://nodejs.org/api/esm.html#esm_package_exports)
+ *    - import {useState, useRef} from 'https://cdn.pika.dev/preact@^10.0.0/hooks';
+ */
+
+// NOTE: Don't directly import the browser-optimized URLs below! Import the current file/URL instead.
+export * from '/-/react@v16.13.1-ByypZEPVPs6cpkpGdpQK/dist=es2017/react.js';
+export {default} from '/-/react@v16.13.1-ByypZEPVPs6cpkpGdpQK/dist=es2017/react.js';
+import '/-/@pika/polyfill@v0.0.3-ohSHYfzCb0txwnYCLjl9/dist=es2017/polyfill.js';
+```
+
+Next we talk about the Pika Code editor. It’s an online editor for writing and editing packages which aims to simplify the process of creating packages by removing all the boilerplate and tedious things like manifests, entry points, export maps and configs etc. Especially as these are different based on the versions of Node.js. It would be a write once, deploy everywhere using modern JS and would be web focussed, and eventually leading to a web-only package library. This is where the Pika Registry comes into play, the final app in the Pika Suite.
+We talk more about browser caching, and also that Snowpack has won JS Nations 2020 open source awards for best productivity app 🎉
+
+Finally we move onto the wrap-up questions, where it’s great to hear Fred agreeing with me on the fact that he also believes that having the need to write complex Webpack configurations is a failing of our industry. Like me, he also got into this industry because it was so simple and fun, and that we’ve lost that along the way over the past ten years or so. Snowpack is his way of trying to turn the tide. Respect to you Fred, awesome work.
+Don’t feel shame in using simple HTML/CSS/Vanilla JS to start your project. There’s an over reliance on complex setups these days. Start simple and then only add the complexity when absolutely necessary. Don’t waste your time upfront, instead enjoy the fun of creating now. Things like 11ty and Snowpack work well in this world as next steps to the super simple and fun building blocks. Only then when production optimisation is required, or is becoming an issue, start to look at things like Webpack.
+
+Finally we talk about non-JS build tools to help in exponentially increasing build times in the JS world. ESBuild is a great example of this, which is **~337X**, yes that’s not a typo, faster than Parcel for instance. Another example is SWC.
+
+---
+
+## Links
+
+- [Fred Schott](https://fredkschott.com/)
+- [FKS on Twitter](https://twitter.com/fredkschott)
+- [Project Polymer](https://www.polymer-project.org/)
+- [ESM](https://2ality.com/2014/09/es6-modules-final.html)
+- [What is The Node Way?](https://fredkschott.com/post/2014/12/the-node-way/)
+- [Browserify](http://browserify.org/)
+- [Webpack](https://webpack.js.org/)
+- [11ty](https://www.11ty.dev/)
+- [Parcel](https://parceljs.org/)
+- [Snowpack](https://www.snowpack.dev/)
+- [Rollup](https://rollupjs.org/)
+- [Svelt](https://svelte.dev/)
+- [Drew Powers](https://blog.logrocket.com/snowpack-vs-webpack/)
+- [SASS Language](https://sass-lang.com/)
+- [Pika](https://www.pika.dev/)
+- [Pika CDN](https://www.pika.dev/cdn)
+- [Pika Code](https://www.pika.dev/code)
+- [Pika Registry](https://www.pika.dev/registry)
+- [Pika CDN package example](https://cdn.pika.dev/react)
+- [Github Codespaces](https://github.com/features/codespaces/)
+- [Component.studio](https://components.studio/)
+- [Webpack Module Federation](https://webpack.js.org/concepts/module-federation/)
+- [OS Awards](https://osawards.com/javascript/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [ESNEXTCONF](https://www.esnextconf.com/)
+- [ES Build](https://github.com/evanw/esbuild)
+- [SWC](https://github.com/swc-project/swc)

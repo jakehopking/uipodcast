@@ -1,0 +1,233 @@
+em {
+  font-style: italic;
+}
+
+// Paragraph
+p {
+  margin-bottom: 1.15rem;
+  // line-height: $line-height-paragraph;
+  font-weight: $font-weight-lighter;
+}
+.lead {
+  font-size: 1.1em;
+}
+.lead-plus {
+  font-size: 1.2em;
+}
+
+p.first-letter::first-letter {
+  float: left;
+  padding: 15px 10px;
+  color: var(--colour-body-bg);
+  background-color: var(--colour-pink);
+  font-size: $font-size-h2;
+  font-family: $font-face-serif;
+  margin: $quarter-spacing-unit $half-spacing-unit -5px 1px;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 2.75rem 0 1.05rem;
+  font-family: $font-face-serif;
+  font-weight: $font-weight-light;
+  line-height: $line-height-headings;
+}
+h1, .h1 {
+  margin-top: 0;
+  font-size: $font-size-h1;
+}
+h2, .h2 {
+  font-size: $font-size-h2;
+}
+h3, .h3 {
+  font-size: $font-size-h3;
+}
+h4, .h4 {
+  font-size: $font-size-h4;
+}
+h5, .h5 {
+  font-size: $font-size-h5;
+}
+small,
+.text_small {
+  font-size: $font-size-small;
+}
+
+code, pre {
+  font-family: $font-face-mono;
+}
+
+pre code {
+  background-color: transparent;
+  display: block;
+  margin: 30px 0 10px 0;
+}
+
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
+code {
+  // prism-react-renderer/themes/dracula
+  background-color: rgb(40, 42, 54);
+  color: $colour-pink;
+  padding: 0 4px;
+}
+
+// Post styling
+.post-heading {
+  font-weight: $font-weight-bold;
+  position: relative;
+  color: #{$colour-pink};
+  margin-bottom: $base-spacing-unit * 2;
+  &::after {
+    --accent: white;
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background-color: var(--accent);
+  }
+  &--accent-blue {
+    &::after {
+      --accent: #{$colour-blue};
+    }
+  }
+  &--accent-pink {
+    &::after {
+      --accent: #{$colour-pink};
+    }
+  }
+}
+.post {
+  ul, ol {
+    margin-left: $base-spacing-unit;
+    margin-bottom: $base-spacing-unit;
+  }
+  ul {
+    list-style-type: disc;
+  }
+}
+
+// Anchors
+a {
+  color: var(--colour-blue);
+  cursor: pointer;
+  transition: $transition-default-all;
+  &:hover,
+  &:active {
+    color: var(--colour-pink);
+  }
+}
+
+hr {
+  border-top: 1px solid $colour-grey;
+  border-bottom: 1px solid $colour-body-bg;
+  height: 2px;
+  width: 100%;
+  border-left: none;
+  border-right: none;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+.text-center {
+  text-align: center !important;
+}
+.text-right {
+  text-align: right !important;
+}
+
+// Font family
+.font-default {
+  font-family: $font-face-default !important;
+}
+.font-sans {
+  font-family: $font-face-sans !important;
+}
+.font-sans-condensed {
+  font-family: $font-face-condensed !important;
+}
+.font-serif {
+  font-family: $font-face-serif !important;
+}
+.font-mono {
+  font-family: $font-face-mono !important;
+}
+.font-icon-default {
+  font-family: $font-face-icon-default !important;
+}
+
+// Font weights
+.font-weight-boldest {
+  font-weight: $font-weight-boldest !important;
+}
+.font-weight-bolder {
+  font-weight: $font-weight-bolder !important;
+}
+.font-weight-bold {
+  font-weight: $font-weight-bold !important;
+}
+.font-weight-medium {
+  font-weight: $font-weight-medium !important;
+}
+.font-weight-regular {
+  font-weight: $font-weight-regular !important;
+}
+.font-weight-light {
+  font-weight: $font-weight-light !important;
+}
+.font-weight-lighter {
+  font-weight: $font-weight-lighter !important;
+}
+.font-weight-lightest {
+  font-weight: $font-weight-lightest !important;
+}
+
+.padded-multiline {
+  span {
+    background-color: inherit;
+    display: inline;
+    padding: 0.5rem;
+
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+}
+
+.title-background {
+  // font-size: $font-size-h4;
+  font-size: $font-size-h3;
+  @include breakpoint(md) {
+  }
+  display: inline;
+  line-height: 1.6;
+  font-style: italic;
+  color: $colour-body-bg;
+  // white-space: pre-wrap;
+  // box-shadow: 10px 0 0 white, -10px 0 0 white;
+  // padding: 5px 5px;
+  &--white {
+    background-color: white;
+  }
+}
+
+.colour-pink {
+  color: $colour-pink !important;
+}
+
+.colour-blue {
+  color: $colour-blue !important;
+}
+
+.colour-pink-lightest {
+  color: $colour-pink-lightest !important;
+}

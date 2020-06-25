@@ -1,0 +1,13 @@
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $border-radius-round;
+  color: $colour-body-bg;
+  background-color: $colour-blue;
+  transition: $transition-default-all;
+  padding: 0 $half-spacing-unit;
+  &--pink {
+    background-color: $colour-pink;
+  }
+}

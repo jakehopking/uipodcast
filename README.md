@@ -1,5 +1,29 @@
-Static files and assets that are used to build [uitherapy.fm](https://uitherapy.fm/) website.
+<p align="center">
+  <a href="https://uitherapy.fm/">
+    <img alt="UI Therapy" src="https://uitherapy.fm/static/images/logo-round.png" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  UI Therapy | UI Desing and Development podcast
+</h1>
 
-Uses `parcel-bundler` for asset management.
+## 🚀 Quick start
 
-Install, build and run: `npm i` & `npm start` & open browser to [localhost:1234](http://localhost:1234).
+1.  **Start developing.**
+
+    Navigate into the site's directory and fire it up.
+
+    ```shell
+    cd uitherapy.fm/
+    gatsby develop
+    ```
+
+2.  **Open the source code and start editing!**
+
+    The ite is now running at `http://localhost:8000`!
+
+    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+
+3.  **See anything that you want to improve?**
+
+    Make the changes and submit a PR, and if I agree with your improvment or added feature, I'll merge in to production.

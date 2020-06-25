@@ -1,0 +1,18 @@
+:root {
+  --colour-body-bg: #131415;
+  --colour-grey: #343434;
+  --colour-wrapper-bg: #212121;
+  --colour-pink-lightest: #ffdbec;
+  --colour-pink: #ff6bb1;
+  --colour-blue: #5dbdff;
+  --colour-text: white;
+  --colour-green: #00ff00;
+}
+
+$colour-body-bg: var(--colour-body-bg);
+$colour-wrapper-bg: var(--colour-wrapper-bg);
+$colour-pink-lightest: var(--colour-pink-lightest);
+$colour-pink: var(--colour-pink);
+$colour-blue: var(--colour-blue);
+$colour-green: var(--colour-green);
+$colour-grey: var(--colour-grey);
