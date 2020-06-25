@@ -6,7 +6,7 @@ exports.onCreateNode = ({node, getNode, actions}) => {
 
   // General MDX pages
   if (node.internal.type === `Mdx` && node.frontmatter.category === `page`) {
-    const slug = createFilePath({node, getNode, basePath: `pages`});
+    const slug = createFilePath({node, getNode, basePath: `content`});
     createNodeField({
       name: `slug`,
       node,
@@ -61,7 +61,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
   pages.data.allMdx.edges.forEach(({node}) => {
     createPage({
       path: node.frontmatter.path || node.fields.slug,
-      component: path.resolve(`./src/templates/default.js`),
+      component: path.resolve(`./src/templates/journal.js`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.

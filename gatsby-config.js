@@ -76,6 +76,14 @@ module.exports = {
         // path: path.join(__dirname, `src`, `content`, `episodes`),
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'journal',
+        path: `${__dirname}/src/content/journal/`,
+        // path: path.join(__dirname, `src`, `content`, `episodes`),
+      },
+    },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
