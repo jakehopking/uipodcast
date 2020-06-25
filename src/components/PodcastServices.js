@@ -15,7 +15,7 @@ const PodcastServices = (props) => {
   const data = [
     {
       title: 'Apple Podcasts',
-      url: 'https://apple.com/',
+      url: 'https://podcasts.apple.com/gb/podcast/ui-therapy/id1520284117',
       icon: Applepodcasts,
     },
     {
@@ -25,12 +25,12 @@ const PodcastServices = (props) => {
     },
     {
       title: 'Overcast',
-      url: 'https://overcast.com/',
+      url: 'https://overcast.fm/itunes1520284117',
       icon: Overcast,
     },
     {
       title: 'Pocketcasts',
-      url: 'https://pocketcasts.com/',
+      url: 'https://pca.st/itunes/1520284117',
       icon: Pocketcasts,
     },
     {
