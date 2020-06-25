@@ -13,6 +13,7 @@ module.exports = {
     subTitle: `The podcast for designers, developers and independent thinkers`,
     title: `UI Therapy`,
     url: `https://uitherapy.fm`,
+    rss: `https://feeds.buzzsprout.com/1180283.rss`,
   },
   plugins: [
     {

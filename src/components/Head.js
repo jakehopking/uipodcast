@@ -15,6 +15,7 @@ const Head = () => {
             subTitle
             title
             url
+            rss
           }
         }
       }
@@ -28,6 +29,7 @@ const Head = () => {
     subTitle,
     title,
     url,
+    rss,
   } = data.site.siteMetadata;
 
   return (
@@ -37,7 +39,7 @@ const Head = () => {
 
       <meta name="description" content={`${description}`} />
       <meta name="keywords" content={keywords} />
-
+      <link type="application/rss+xml" rel="alternate" href={rss} />
       <meta name="author" content={author} />
       {`<!-- Open Graph -->`}
       <meta property="og:title" content={`${title} Podcast`} />
