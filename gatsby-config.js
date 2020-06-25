@@ -25,6 +25,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Merriweather\:300,300i,400,400i,700,700i`,
+          `Source Sans\:200,300,300i,400i,600,600i,700`,
+          `Open Sans Condensed\:300,300i,700,700i`,
+        ],
+        display: 'swap',
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
