@@ -35,7 +35,7 @@ export default function DefaultTemplate({data: {mdx}, props}) {
 // `;
 
 export const pageQuery = graphql`
-  query PageQuery($slug: String!) {
+  query($slug: String!) {
     mdx(fields: {slug: {eq: $slug}}) {
       body
       frontmatter {

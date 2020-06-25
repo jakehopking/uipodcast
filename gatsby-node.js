@@ -54,7 +54,9 @@ exports.createPages = async ({graphql, actions, reporter}) => {
     }
   `);
   if (pages.errors) {
-    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
+    reporter.panicOnBuild(
+      '🚨  ERROR: Loading "createPages [default pages]" query'
+    );
   }
   pages.data.allMdx.edges.forEach(({node}) => {
     createPage({
@@ -85,6 +87,12 @@ exports.createPages = async ({graphql, actions, reporter}) => {
       }
     }
   `);
+
+  if (episodes.errors) {
+    reporter.panicOnBuild(
+      '🚨  ERROR: Loading "createPages [episodes pages]" query'
+    );
+  }
   // Create episode pages.
   // you'll call `createPage` for each episode
   episodes.data.allMdx.edges.forEach(({node}, index) => {
