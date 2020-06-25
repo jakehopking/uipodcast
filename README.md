@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  UI Therapy | UI Desing and Development podcast
+  UI Therapy | UI Design and Development podcast
 </h1>
 
 ## 🚀 Quick start
