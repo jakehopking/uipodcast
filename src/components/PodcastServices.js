@@ -35,12 +35,13 @@ const PodcastServices = (props) => {
     },
     {
       title: 'Stitcher',
-      url: 'https://stitcher.com/',
+      url: 'https://www.stitcher.com/podcast/ui-therapy',
       icon: Stitcher,
     },
     {
       title: 'Spotify',
-      url: 'https://spotify.com/',
+      url:
+        'https://open.spotify.com/show/30sbfREuT49WwBakEZAFyO?si=TLt8710YRpa8B70JTbUUKQ',
       icon: Spotify,
     },
     {
