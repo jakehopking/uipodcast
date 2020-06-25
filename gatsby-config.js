@@ -57,12 +57,12 @@ module.exports = {
         // path: path.join(__dirname, `src`, `content`, `episodes`),
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-100706005-3`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: `UA-100706005-3`,
+    //   },
+    // },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,

@@ -51,6 +51,17 @@ const Head = () => {
       <meta name="twitter:description" content={subTitle} />
       <meta name="twitter:image" content={`${url}${socialImage}`} />
       <meta name="twitter:card" content="summary" />
+
+      {`<!-- Global site tag (gtag.js) - Google Analytics -->`}
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-100706005-3"
+      ></script>
+      {`<script>
+        window.dataLayer = window.dataLayer || []; function gtag()
+        {dataLayer.push(arguments)}; gtag('js', new Date()); gtag('config',
+        'UA-100706005-3');
+      </script>`}
     </Helmet>
   );
 };
