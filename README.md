@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://uitherapy.fm/">
-    <img alt="UI Therapy" src="https://uitherapy.fm/static/images/logo-round.png" width="60" />
+    <img width="100px" height="100px" alt="UI Therapy" src="https://uitherapy.fm/media/images/logo-round.png" width="60" />
   </a>
 </p>
 <h1 align="center">
