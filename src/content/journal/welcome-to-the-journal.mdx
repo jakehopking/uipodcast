@@ -1,0 +1,35 @@
+---
+category: page
+date: '2020-06-25'
+draft: true
+tags: ['podcast', 'launch']
+title: 'Welcome to the UI Therapy Journal'
+---
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti modi, sapiente ipsum, maxime, eius quasi iure veritatis recusandae totam quia pariatur cum dignissimos optio quos deleniti doloribus ab? Eligendi, officia.
+
+<div className="embed-responsively embed-responsively--16by9">
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/4SZl1r2O_bY"
+    frameborder="0"
+    allowfullscreen
+  ></iframe>
+</div>
+
+```js
+export default function LayoutDefault(props) {
+  const {type = 'subpage', children} = props;
+  return (
+    <IconContext.Provider value={{className: 'react-icons'}}>
+      <Head />
+      <div className={`site-wrapper site-wrapper--${type}`} id="top">
+        <Header />
+        <main className="site-main">{children}</main>
+        <Footer />
+      </div>
+    </IconContext.Provider>
+  );
+}
+```
