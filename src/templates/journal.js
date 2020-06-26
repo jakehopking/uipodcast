@@ -103,20 +103,8 @@ export default function DefaultTemplate({data: {mdx, site}, props}) {
   );
 }
 
-// export const pageQuery = graphql`
-//   query PageQuery($id: String) {
-//     mdx(id: {eq: $id}) {
-//       id
-//       body
-//       frontmatter {
-//         title
-//       }
-//     }
-//   }
-// `;
-
 export const pageQuery = graphql`
-  query PageeQuery($id: String) {
+  query($slug: String!) {
     site {
       siteMetadata {
         subTitle
@@ -124,7 +112,7 @@ export const pageQuery = graphql`
         url
       }
     }
-    mdx(id: {eq: $id}) {
+    mdx(fields: {slug: {eq: $slug}}) {
       body
       frontmatter {
         author
