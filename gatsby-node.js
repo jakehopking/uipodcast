@@ -5,7 +5,7 @@ exports.onCreateNode = ({node, getNode, actions}) => {
   const {createNodeField} = actions;
 
   // General MDX pages
-  if (node.internal.type === `Mdx` && node.frontmatter.category === `page`) {
+  if (node.internal.type === `Mdx` && node.frontmatter.category === `journal`) {
     const slug = createFilePath({node, getNode, basePath: `content`});
     createNodeField({
       name: `slug`,
@@ -38,7 +38,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
 
   const pages = await graphql(`
     query {
-      allMdx(filter: {frontmatter: {category: {eq: "page"}}}) {
+      allMdx(filter: {frontmatter: {category: {eq: "journal"}}}) {
         edges {
           node {
             id

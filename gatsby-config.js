@@ -41,6 +41,14 @@ module.exports = {
         defaultLayouts: {
           default: `${__dirname}/src/layouts/layout-default.js`,
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
       },
     },
     {
