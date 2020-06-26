@@ -2,12 +2,15 @@ import React from 'react';
 import {Link} from 'gatsby';
 
 const EpisodeItem = ({props: {...node}}) => {
-  const {frontmatter, excerpt} = node;
+  const {frontmatter, excerpt, fields} = node;
+  console.log(node);
   return (
-    <Link to={frontmatter.path} className="episode-list__item">
+    <Link to={frontmatter.path || fields.slug} className="episode-list__item">
       <div className="episode-list__meta">
         <div className="episode-list__number">
-          Episode {frontmatter.episodeNo}
+          {frontmatter.category === 'episode'
+            ? `Episode ${frontmatter.episodeNo}`
+            : `${frontmatter.author}`}
         </div>
         <div className="episode-list__date">
           <em>{frontmatter.date}</em>

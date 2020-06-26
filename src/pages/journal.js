@@ -10,16 +10,16 @@ import Newsletter from '../components/Newsletter';
 
 export default function Episodes({data}) {
   // Return filtered allMdx arr for expisodes only
-  const episodes = data.allMdx.edges.filter(
+  const journal = data.allMdx.edges.filter(
     ({node}) =>
-      node.frontmatter.category === 'episode' && node.frontmatter.draft !== true
+      node.frontmatter.category === 'journal' && node.frontmatter.draft !== true
   );
   return (
     <LayoutDefault>
-      <SectionTitleWings tag="h2">Episodes</SectionTitleWings>
+      <SectionTitleWings tag="h2">Journal</SectionTitleWings>
       <SectionContent className={'mb3'}>
         <div className="episode-list">
-          {episodes.map(({node}) => (
+          {journal.map(({node}) => (
             <EpisodeItem props={node} key={node.id} />
           ))}
         </div>
@@ -45,12 +45,12 @@ export const query = graphql`
         node {
           id
           frontmatter {
+            author
             category
+            draft
             date(formatString: "DD MMMM, YYYY")
-            episodeNo
             format
             path
-            podcastUrl
             tags
             title
           }

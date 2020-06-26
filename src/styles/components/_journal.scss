@@ -1,0 +1,33 @@
+.journal {
+
+  &__heading {
+    position: relative;
+    margin-bottom: $base-spacing-unit * 2;
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: -10px;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 2px;
+    //   background-color: $colour-blue;
+    // }
+  }
+  &__heading-image {
+    margin: 0;
+  }
+  &__heading-title {
+    color: white;
+    background-color: $colour-pink;
+    // font-size: var(--font-size-3);
+    padding: $base-spacing-unit;
+    font-weight: $font-weight-bold;
+    margin: 0;
+  }
+  &__heading-date {
+    background-color: white;
+    padding: 10px 20px;
+    color: $colour-wrapper-bg;
+    margin: 0;
+  }
+}
