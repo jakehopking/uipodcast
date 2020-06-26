@@ -3,6 +3,7 @@ import {graphql} from 'gatsby';
 import {MDXProvider} from '@mdx-js/react';
 import {MDXRenderer} from 'gatsby-plugin-mdx';
 import {Link} from 'gatsby';
+import {Helmet} from 'react-helmet';
 import Img from 'gatsby-image';
 import LayoutDefault from '../layouts/layout-default';
 import SectionTitleWings from '../components/sections/SectionTitleWings';
@@ -15,10 +16,35 @@ import PodcastServices from '../components/PodcastServices';
 
 const shortcodes = {Link}; // Provide common components here
 
-export default function DefaultTemplate({data: {mdx}, props}) {
+export default function DefaultTemplate({data: {mdx, site}, props}) {
   let postImage = mdx.frontmatter.postImage.childImageSharp.fluid;
   return (
     <LayoutDefault {...props}>
+      <Helmet>
+        <title>{`${mdx.frontmatter.title} | ${site.siteMetadata.title} | Journal`}</title>
+        <meta
+          property="og:title"
+          content={`${mdx.frontmatter.title} - ${site.siteMetadata.title} Journal`}
+        />
+        <meta
+          property="og:description"
+          content={`${site.siteMetadata.title} | ${site.siteMetadata.subTitle}`}
+        />
+        <meta property="og:type" content="music.song" />
+        <meta
+          property="og:url"
+          content={`${site.siteMetadata.url}${mdx.frontmatter.path}`}
+        />
+        {`<!-- Twitter -->`}
+        <meta
+          name="twitter:title"
+          content={`${mdx.frontmatter.title} - ${site.siteMetadata.title} | Journal`}
+        />
+        <meta
+          name="twitter:description"
+          content={`${site.siteMetadata.title} | ${site.siteMetadata.subTitle}`}
+        />
+      </Helmet>
       <SectionTitleWings tag="h2">Journal</SectionTitleWings>
       <SectionContent className="journal">
         <div className="journal__heading">
@@ -90,8 +116,15 @@ export default function DefaultTemplate({data: {mdx}, props}) {
 // `;
 
 export const pageQuery = graphql`
-  query($slug: String!) {
-    mdx(fields: {slug: {eq: $slug}}) {
+  query PageeQuery($id: String) {
+    site {
+      siteMetadata {
+        subTitle
+        title
+        url
+      }
+    }
+    mdx(id: {eq: $id}) {
       body
       frontmatter {
         author

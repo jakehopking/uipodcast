@@ -3,7 +3,6 @@ import {Link} from 'gatsby';
 
 const EpisodeItem = ({props: {...node}}) => {
   const {frontmatter, excerpt, fields} = node;
-  console.log(node);
   return (
     <Link to={frontmatter.path || fields.slug} className="episode-list__item">
       <div className="episode-list__meta">

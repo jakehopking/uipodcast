@@ -1,5 +1,6 @@
 import React from 'react';
 import {graphql} from 'gatsby';
+import {Helmet} from 'react-helmet';
 import LayoutDefault from '../layouts/layout-default';
 import SectionTitleWings from '../components/sections/SectionTitleWings';
 import SectionContent from '../components/sections/SectionContent';
@@ -16,6 +17,9 @@ export default function Episodes({data}) {
   );
   return (
     <LayoutDefault>
+      <Helmet>
+        <title>{`${data.site.siteMetadata.title} | Episodes`}</title>
+      </Helmet>
       <SectionTitleWings tag="h2">Episodes</SectionTitleWings>
       <SectionContent className={'mb3'}>
         <div className="episode-list">
@@ -39,6 +43,13 @@ export default function Episodes({data}) {
 
 export const query = graphql`
   query {
+    site {
+      siteMetadata {
+        subTitle
+        title
+        url
+      }
+    }
     allMdx(sort: {order: DESC, fields: frontmatter___date}) {
       totalCount
       edges {
