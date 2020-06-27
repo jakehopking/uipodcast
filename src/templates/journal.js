@@ -46,7 +46,7 @@ export default function DefaultTemplate({data: {mdx, site}, props}) {
         />
       </Helmet>
       <SectionTitleWings tag="h2">Journal</SectionTitleWings>
-      <SectionContent className="journal">
+      <SectionContent className="journal post">
         <div className="journal__heading">
           <Img fluid={postImage} className="journal__heading-image" />
           <h2 className="journal__heading-title">{mdx.frontmatter.title}</h2>
