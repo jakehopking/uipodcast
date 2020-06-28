@@ -50,14 +50,6 @@ const Nav = () => {
             >
               Episodes
             </Link>
-            <Link
-              to={`/journal/`}
-              partiallyActive={true}
-              className="site-nav__link"
-              activeClassName="site-nav__link--active"
-            >
-              Journal
-            </Link>
             {location === '/' && (
               <Fragment>
                 <a

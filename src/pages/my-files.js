@@ -1,14 +1,13 @@
-import React from 'react';
-import {graphql} from 'gatsby';
-import LayoutDefault from '../layouts/layout-default';
-import SectionTitleWings from '../components/sections/SectionTitleWings';
-import SectionContent from '../components/sections/SectionContent';
+import React from "react"
+import { graphql } from "gatsby"
+import LayoutDefault from "../layouts/layout-default"
 
-export default function MyFiles({data}) {
+export default function MyFiles({ data }) {
+  console.log(data)
   return (
     <LayoutDefault>
-      <SectionTitleWings tag="h2">My Site's Files</SectionTitleWings>
-      <SectionContent className={'mb3'}>
+      <div>
+        <h1>My Site's Files</h1>
         <table>
           <thead>
             <tr>
@@ -19,7 +18,7 @@ export default function MyFiles({data}) {
             </tr>
           </thead>
           <tbody>
-            {data.allFile.edges.map(({node}, index) => (
+            {data.allFile.edges.map(({ node }, index) => (
               <tr key={index}>
                 <td>{node.relativePath}</td>
                 <td>{node.prettySize}</td>
@@ -29,9 +28,9 @@ export default function MyFiles({data}) {
             ))}
           </tbody>
         </table>
-      </SectionContent>
+      </div>
     </LayoutDefault>
-  );
+  )
 }
 
 export const query = graphql`
@@ -48,4 +47,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`
