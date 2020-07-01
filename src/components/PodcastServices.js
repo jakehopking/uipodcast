@@ -20,7 +20,8 @@ const PodcastServices = (props) => {
     },
     {
       title: 'Google Podcasts',
-      url: 'https://google.com/',
+      url:
+        'https://podcasts.google.com/u/1/feed/aHR0cHM6Ly9mZWVkcy5idXp6c3Byb3V0LmNvbS8xMTgwMjgzLnJzcw?ep=14',
       icon: Googlepodcasts,
     },
     {
