@@ -44,12 +44,12 @@ const Head = () => {
       {`<!-- Open Graph -->`}
       <meta property="og:title" content={`${title} Podcast`} />
       <meta property="og:description" content={`${title} | ${subTitle}`} />
-      <meta property="og:image" content={`${url}${socialImage}`} />
+      <meta property="og:image" content={`${url}${socialImage}?00001`} />
       <meta property="og:url" content={url} />
       {`<!-- Twitter -->`}
       <meta name="twitter:title" content={`${title} Podcast`} />
       <meta name="twitter:description" content={subTitle} />
-      <meta name="twitter:image" content={`${url}${socialImage}`} />
+      <meta name="twitter:image" content={`${url}${socialImage}?00001`} />
       <meta name="twitter:card" content="summary" />
 
       {`<!-- Google Tag Manager -->`}
