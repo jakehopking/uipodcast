@@ -67,7 +67,7 @@ export default function EpisodeTemplate({data: {mdx, site}}) {
           style={{marginBottom: '20px'}}
         />
       </SectionContent>
-      <SectionContent className="episode">
+      <SectionContent className="episode post">
         <MDXProvider
           components={{
             ...shortcodes,
@@ -77,6 +77,11 @@ export default function EpisodeTemplate({data: {mdx, site}}) {
             h4: (props) => <h4 {...props} className="" />,
             h5: (props) => <h5 {...props} className="" />,
             h6: (props) => <h6 {...props} className="" />,
+            table: (props) => (
+              <div className="table-fill">
+                <table {...props} className="" />
+              </div>
+            ),
             pre: ({children: {props}}) => {
               if (props.mdxType === 'code') {
                 return (
@@ -95,7 +100,7 @@ export default function EpisodeTemplate({data: {mdx, site}}) {
         >
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
-        <hr />
+        <hr style={{marginTop: '40px'}} />
         <p className="mt3 text-center">
           If you can, please support the show:{' '}
           <a

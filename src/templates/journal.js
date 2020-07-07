@@ -63,6 +63,9 @@ export default function DefaultTemplate({data: {mdx, site}, props}) {
             h4: (props) => <h4 {...props} className="" />,
             h5: (props) => <h5 {...props} className="" />,
             h6: (props) => <h6 {...props} className="" />,
+            table: (props) => (
+              <table {...props} className="table--bordered  table--striped" />
+            ),
             pre: ({children: {props}}) => {
               if (props.mdxType === 'code') {
                 return (
