@@ -1,5 +1,7 @@
 :root {
-  --colour-body-bg: #131415;
+  --colour-body-bg: #000000;
+  --colour-grey-lightest: rgb(238, 238, 238);
+  --colour-grey-light: rgb(181, 181, 181);
   --colour-grey: #343434;
   --colour-wrapper-bg: #212121;
   --colour-pink-lightest: #ffdbec;
@@ -16,13 +18,17 @@ $colour-pink-lightest: var(--colour-pink-lightest);
 $colour-pink: var(--colour-pink);
 $colour-blue: var(--colour-blue);
 $colour-green: var(--colour-green);
+$colour-grey-lightest: var(--colour-grey-lightest);
+$colour-grey-light: var(--colour-grey-light);
 $colour-grey: var(--colour-grey);
+$colour-text: var(--colour-text);
 
 
-$ui-default-base-colour:              rgb(150, 150, 150);
-$table-line-tbody-colour:             rgb(208, 208, 208);        
-$table-line-thead-colour:             rgb(0, 0, 0);   
-$table-line-thead-bg-colour:          transparent;
-$table-row-bg-color:                  white;
-$table-row-alt-bg-color:              rgb(208, 208, 208);
-$table-row-alt-bg-color-hover:        rgb(208, 208, 208);
+$table-border-colour: rgb(99, 99, 99);
+$table-thead-colour: rgb(255, 255, 255);   
+$table-thead-bg-colour: $colour-grey;
+$table-tbody-colour: $colour-wrapper-bg;        
+$table-row-bg-colour: white;
+$table-row-bg-colour-alt: $colour-grey-lightest;
+$table-row-colour-hover: white;
+$table-row-bg-colour-hover: $colour-pink;

@@ -78,7 +78,7 @@ export default function EpisodeTemplate({data: {mdx, site}}) {
             h5: (props) => <h5 {...props} className="" />,
             h6: (props) => <h6 {...props} className="" />,
             table: (props) => (
-              <div className="table-fill">
+              <div className="table-container">
                 <table {...props} className="" />
               </div>
             ),

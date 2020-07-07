@@ -49,7 +49,9 @@ export default function DefaultTemplate({data: {mdx, site}, props}) {
       <SectionContent className="journal post">
         <div className="journal__heading">
           <Img fluid={postImage} className="journal__heading-image" />
-          <h2 className="journal__heading-title">{mdx.frontmatter.title}</h2>
+          <h2 className="journal__heading-title colour-white">
+            {mdx.frontmatter.title}
+          </h2>
           <p className="journal__heading-date">
             {mdx.frontmatter.date} by <em>{mdx.frontmatter.author}</em>
           </p>
@@ -64,7 +66,9 @@ export default function DefaultTemplate({data: {mdx, site}, props}) {
             h5: (props) => <h5 {...props} className="" />,
             h6: (props) => <h6 {...props} className="" />,
             table: (props) => (
-              <table {...props} className="table--bordered  table--striped" />
+              <div className="table-container">
+                <table {...props} className="" />
+              </div>
             ),
             pre: ({children: {props}}) => {
               if (props.mdxType === 'code') {
