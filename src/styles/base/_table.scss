@@ -1,0 +1,77 @@
+.table-container {
+  background: white;
+  border-radius: $border-radius-default;
+  border-collapse: collapse;
+  margin: auto;
+  max-width: 100%;
+  padding: 1px;
+  width: 100%;
+}
+
+th {
+  color: $table-thead-colour;
+  background: $table-thead-bg-colour;
+  border-bottom: 1px solid black;
+  border-right: 1px solid $table-border-colour;
+  font-weight: $font-weight-bold;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th:first-child {
+  border-top-left-radius: 3px;
+}
+
+th:last-child {
+  border-top-right-radius: 3px;
+  border-right: none;
+}
+
+tr {
+  border-top: 1px solid $table-border-colour;
+  border-bottom: 1px solid $table-border-colour;
+  color: $table-tbody-colour;
+}
+
+tr:hover td {
+  background: $table-row-bg-colour-hover;
+  color: $table-row-colour-hover;
+}
+
+tr:nth-child(odd) td {
+  background: $table-row-bg-colour-alt;
+}
+
+tr:nth-child(odd):hover td {
+  background: $table-row-bg-colour-hover;
+}
+
+tr:first-child {
+  border-top: none;
+}
+
+tr:last-child {
+  border-bottom: none;
+}
+
+tr td:last-child {
+  border-right: none;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 3px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 3px;
+}
+
+td {
+  background: $table-row-bg-colour;
+  padding: $half-spacing-unit;
+  text-align: left;
+  font-weight: $font-weight-light;
+  border-right: 1px solid $table-border-colour;
+  vertical-align: top;
+}
