@@ -1,10 +1,19 @@
 import React from 'react';
 import {useStaticQuery, graphql} from 'gatsby';
 import {Helmet} from 'react-helmet';
-import socialImage from '../images/logo-square.jpg';
+import metaImage from '../images/logo-square.jpg';
 
-const Head = () => {
-  const data = useStaticQuery(
+const Head = (
+  description,
+  pathname,
+  title,
+  author,
+  socialImage,
+  socialTitle,
+  socialDescription,
+  audioUrl = false
+) => {
+  const {site} = useStaticQuery(
     graphql`
       query {
         site {
@@ -14,7 +23,7 @@ const Head = () => {
             keywords
             subTitle
             title
-            url
+            siteUrl
             rss
           }
         }
@@ -22,42 +31,53 @@ const Head = () => {
     `
   );
 
-  const {
-    author,
-    keywords,
-    description,
-    subTitle,
-    title,
-    url,
-    rss,
-  } = data.site.siteMetadata;
+  const {author, keywords, subTitle, siteUrl, rss} = site.siteMetadata;
+
+  const metaTitle = title || `${site.siteMetadata.title} | ${subTitle}`;
+  const metaDescription = description || site.siteMetadata.description;
+  const metaAuthor = author || site.siteMetadata.author;
+  // Social
+  const metaSocialTitle = socialTitle || `${site.siteMetadata.title}`;
+  const metaSocialDescription =
+    socialDescription || `${site.siteMetadata.subTitle}`;
+  const metaSocialImage = socialImage || metaImage;
+  // Audio
+  const metaAudio = '';
+  if (audioUrl) {
+    metaAudio = (
+      <React.Fragment>
+        <meta property="og:audio" content={audioUrl} />
+        <meta property="og:audio:type" content="audio/mp3" />
+      </React.Fragment>
+    );
+  }
+  // Canonical
+  const canonical = pathname ? `${siteUrl}${pathname}` : null;
 
   return (
     <Helmet>
-      <title>{`${title} | ${subTitle}`}</title>
-      <link rel="canonical" href={url} />
-
-      <meta name="description" content={`${description}`} />
+      <title>{metaTitle}</title>
+      <link rel="canonical" href={canonical}></link>
+      <meta name="description" content={metaDescription} />
       <meta name="keywords" content={keywords} />
       <link type="application/rss+xml" rel="alternate" href={rss} />
-      <meta name="author" content={author} />
+      <meta name="author" content={metaAuthor} />
+      {metaAudio}
       {`<!-- Open Graph -->`}
-      <meta property="og:title" content={`${title} Podcast`} />
-      <meta property="og:description" content={`${title} | ${subTitle}`} />
-      <meta property="og:image" content={`${url}${socialImage}?00001`} />
-      <meta property="og:url" content={url} />
+      <meta property="og:title" content={metaSocialTitle} />
+      <meta property="og:description" content={metaSocialDescription} />
+      <meta property="og:image" content={`${siteUrl}${metaSocialImage}`} />
+      <meta property="og:url" content={canonical} />
       {`<!-- Twitter -->`}
-      <meta name="twitter:title" content={`${title} Podcast`} />
-      <meta name="twitter:description" content={subTitle} />
-      <meta name="twitter:image" content={`${url}${socialImage}?00001`} />
+      <meta name="twitter:title" content={metaSocialTitle} />
+      <meta name="twitter:description" content={metaSocialDescription} />
+      <meta name="twitter:image" content={`${siteUrl}${metaSocialImage}`} />
       <meta name="twitter:card" content="summary" />
-
       {`<!-- Google Tag Manager -->`}
       <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=UA-100706005-3"
       ></script>
-
       {`<!-- Google Analytics -->`}
       <script>
         {`(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

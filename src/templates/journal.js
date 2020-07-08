@@ -30,11 +30,6 @@ export default function DefaultTemplate({data: {mdx, site}, props}) {
           property="og:description"
           content={`${site.siteMetadata.title} | ${site.siteMetadata.subTitle}`}
         />
-        <meta property="og:type" content="music.song" />
-        <meta
-          property="og:url"
-          content={`${site.siteMetadata.url}${mdx.frontmatter.path}`}
-        />
         {`<!-- Twitter -->`}
         <meta
           name="twitter:title"
