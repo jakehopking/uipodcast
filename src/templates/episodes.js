@@ -21,10 +21,7 @@ export default function EpisodeTemplate({data: {mdx, site}}) {
     <LayoutDefault>
       <Helmet>
         <title>{`${mdx.frontmatter.title} | ${site.siteMetadata.title} Podcast Episode ${mdx.frontmatter.episodeNo}`}</title>
-        <meta
-          property="og:audio"
-          content={`${site.siteMetadata.url}${mdx.frontmatter.podcastUrl}`}
-        />
+        <meta property="og:audio" content={`${mdx.frontmatter.podcastUrl}`} />
         <meta property="og:audio:type" content="audio/mp3" />
         <meta
           property="og:title"
