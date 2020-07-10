@@ -118,7 +118,7 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
-    // `gatsby-plugin-twitter`,
+    `gatsby-plugin-twitter`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
   ],
