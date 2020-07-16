@@ -1,0 +1,109 @@
+---
+category: episode
+date: '2020-07-16'
+episodeNo: 5
+format: QuickCuppa
+path: /episodes/5
+podcastUrl: https://www.buzzsprout.com/1180283/4590401-quickcuppa-thoughts-on-gatsbyjs-the-react-based-ssg-framework.mp3
+tags:
+  [
+    'development',
+    'solo',
+    'opinion',
+    'gatsbyjs',
+    'javascript',
+    'ssg',
+    'static site generator',
+    'css',
+    'html',
+  ]
+title: 'Thoughts on GatsbyJS, the React-based SSG framework'
+---
+
+## Show notes
+
+I this week's episode I share my thoughts on the use of GatsbyJS and whether I feel it's a viable static site generator framework.
+
+### Overview
+
+- Talk about static sites and generators
+- Cover basics of GatsbyJS and GraphQL
+- Share opions on the Pro/Cons of using this framework
+- Offer my conclusion
+- Show housekeeping
+
+### What are static sites?
+
+Static sites have been around for a very long time, and realistically are the original website: simply HTML, CSS, and JavaScript. They are not rendered during runtime; there is no server-side code, no database, etc.
+
+### What's a static site generator?
+
+It's a tool that generates static sites whenever you decide to run a build on your codebase.
+Contrast this to typical javascript frameworks and libraries, these usually generate HTML content on the client side during runtime.
+How is this different from server-side rendering? The primary difference is that there is no server-side code. So, unlike a framework such as Django, Gatsby does not render anything on the server when a request is made. Everything is generated at the build time of the application.
+A few benefits of a static site are: speed, the simplest infrastructure, search engine optimization, and security.
+
+### GatsbyJS
+
+“Gatsby is a free and open source framework based on React that helps developers build blazing fast websites and apps”
+
+- Built on top of ReactJS
+- GraphQL for data
+- Uses any source for content; I use MDX (JSX in Markdown)
+
+#### Pros
+
+- Love React, writing components is a joy.
+- Because it's built on ReactJS has access to a huge ecosystem of packages.
+- Awesome developer experience. A perfect example of HMR working beautifully.
+- A single, universal GraphQL API for any data sources. Which in theory can provide developers with a unified abstraction layer (and query language) to access any data, whether that be remote JSON, local files or any combination of these all returned as a single blob of data. It's the future.
+- Super fast client-side navigation.
+- Everything is versioned git, so content is safe as well as the site source is backed-up (not unique to Gatsby).
+- Huge plugin ecosystem.
+- Gatsby official docs are good and their focus on providing quality tutorials is commendable.
+
+#### Cons
+
+- Batteries NOT included.
+- Out of the box these are not included:
+  - Pagination
+  - SEO (canonical links, description, keywords etc)
+  - Navigation menus
+  - Categories, tags,
+- Almost everything is a plugin.
+- These aren't maintained sometimes.
+- Can't be modified.
+- Huge plugin ecosystem.
+- Webpack.
+- The gatsby-node.js file is unpleasant, unintuitive and ultimately needs to be replaced with something less like a webpack config file, and something more friendly and in keeping with this modern take on a SSG.
+- This one may or may not be obvious, but no CMS.
+- Writing GraphQL is annoying. Contributes to a lot of boilerplate and repetitive queries. Why can't we just have access to all the data on every page 'automagically'? These are static pages after all, so there's no overhead (for the browser and ultimately the end user).
+- Debugging is a nightmare.
+  - Spent half a day debugging a SCSS issue related to the use of css variables and fallback.
+  - Sometimes things work in dev, but do not at build time and throw blank errors - the worst kind!
+- Build speed. Slow.
+- Site is down whilst build is running.
+
+### Conclusion
+
+This was an interesting experiment for me. I'm glad I've had the opportunity to use and build a full site with this framework. It's had a few highs, but also some very unpleasant lows (build failures with NO errors and as such nowhere to begin the debugging process).
+
+It's a powerful platform if you have the large amounts of time required to build all the missing functionality required to be able to produce a fully functioning website. It's hugely flexible and that is both a positive and a negative quality. For me I was expecting a more opinionated, batteries included, kind of experience. The introductory tutorial, which is based upon the 'gatsby-starter-default' git repository, gives the illusion that the batteries are included. As I said already, the guides on the gatsby site are great, but like with most tutorials, once you start to do something modestly more complex you're very much on your own (especially if someone else hasn't created a plugin).
+
+Also as it's been my first real-world experience with GraphQL, I'm actually rather excited to delve further into this open specification. For example I see there is a Django package called django-graphene that I could use with my Wagtail CMS.
+
+There are simpler tools elsewhere. For my next site, which I'll be starting to build soon, I will not be using Gatsby. In its current state it's simply not worth the time required to bootstrap.
+
+## Links
+
+- <Link to="/journal/free-stickers">Free Stickers giveaway</Link>
+- [GatsbyJS](https://www.gatsbyjs.org/)
+- [GraphQL](https://graphql.org/)
+- [Static web page](https://en.wikipedia.org/wiki/Static_web_page)
+- [JSX](https://reactjs.org/docs/introducing-jsx.html)
+- [MDX](https://mdxjs.com/)
+- [hopking.io](https://hopking.io/)
+- [Django](https://www.djangoproject.com/)
+- [Wagtail CMS](https://wagtail.io/)
+- [Django-graphene](https://docs.graphene-python.org/projects/django/en/latest/)
+- [Free Stickers](https://uitherapy.fm/journal/free-stickers/)
