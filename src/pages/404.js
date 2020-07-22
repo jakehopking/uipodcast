@@ -29,11 +29,9 @@ export default function Episodes({data}) {
         <p>However, please don't allow that to make this a wasted journey.</p>
         <p>
           May I kindly suggest that you signup for my{' '}
-          <Link onClick={() => scrollTo('#newsletter', 'start')}>
-            newsletter
-          </Link>
-          , and I promise to send you some cool stuff that will make this page's
-          inconvenience a little less painful.
+          <a href="#newsletter">newsletter</a>, and I promise to send you some
+          cool stuff that will make this page's inconvenience a little less
+          painful.
         </p>
         <p>Or how about listening to one of my smashing episodes? 👇</p>
         <PostHeading tag="h3">Episodes</PostHeading>

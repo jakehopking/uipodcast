@@ -1,0 +1,188 @@
+---
+category: episode
+date: '2020-07-22'
+episodeNo: 6
+format: Interview
+path: /episodes/6
+podcastUrl: https://www.buzzsprout.com/1180283/4675610-how-do-we-unbundle-the-jamstack-thoughts-on-meta-frameworks-toast-and-party-corgi-with-chris-biscardi.mp3
+tags:
+  [
+    'development',
+    'interview',
+    'jamstack',
+    'javascript',
+    'gatsby',
+    'meta-frameworks',
+    'unbundling',
+    'webpack',
+    'toast',
+    'static site generator',
+  ]
+title: 'How do we unbundle the Jamstack, thoughts on meta-frameworks, Toast and Party Corgi with Chris Biscardi'
+---
+
+## Show notes
+
+In this week's episode I talk with Chris Biscardi about the Jamstack, gatsbyJS and his own meta-framework called Toast, among many other interesting digressions :)
+
+### Overview
+
+- Introduction
+- JamStack
+- Toast
+- Party Corgi
+- MDX Conf
+- Wrap Questions
+
+### Introduction
+
+Got into the industry via ActionsSript, then moved over JS when Adobe killed it off. Worked at Docker, Dropbox and recently finished a contract with GatsbyJS.
+
+Talk a bit about the Party Corgi Podcast, and the rainbow corgi logo (which is cute). Chris shares that he has nerves with his podcast too (after I apologies for a few nervous erm/ahhs etc). I've left these in unedited because the conversation took a nice direction.
+
+### What is the Jamstack
+
+Jamstack and serverless are pretty much the same thing, and are both associated with Build vs Buy Paradigm i.e. if the technology is your core competency then build it, else buy it.
+
+It's basically the reduction in complexity associated with large devops pipelines i.e. you're not running a kubernetes or large distributed infrastructure. Instead you're basically shipping a zip file that's then deployed on to Amazon S3 or a CDN, and you're serving a bunch or static files. All the compute necessary to generate your site is done at build time.
+
+A reasonable understanding of where the reduction in complexity ends up; is instead with the developer. One may have removed the need for a server to host a dynamic site with databases etc, but the same functionality has to be achieved at build time in a way that shouldn't be too complex for the developer.
+
+#### Why choose Jamstack over a traditional CMS driven stie?
+
+Basically no matter how long it takes to build a site to a static representation, it's a definite advantage over traditional implementations when the traffic surges past what your server's processor can handle. Chris mentions his experience with working at Docker during DockerCon and having to constantly monitor container loads and see if something needed rebooting to fix a crippled server etc. These problems disappear with a Jamstack/Serverless implementation. Another advantage is that if ReactJS is working on the client side, it can then receive updated data via an API endpoint in real time.
+
+A further advantage is that bugs are no longer an issue i.e. a piece of bad code that slips into the deployed codebase of a traditionally hosted solution, can break the whole site application when at some indeterminate point in the future it gets called by a user. Contrast this to the static sites; errors are discovered at build time and are not ever pushed to the server. Your site will stay up until you have a new working build to deploy.
+
+We discuss the tipping point where the advantages of a traditional CMS vs a Jamstack application win out. It's a surprisingly large number of pages, somewhere in the 50k range.
+
+We talk about a future where Jamstack sites could do incremental builds, and I think that would be a game changer as it addresses my concerns of rebuilding constantly for new content or content revisions (two of my major reservations with this technology).
+
+#### What's a meta-framework?
+
+Basically the tools you're using on top of a site or framework. Most people use vue/angular/react to build sites these days. However there are tools built on top of these frameworks, such as Create React App, Sapper and VuePress. These tools take the underlying technology (react, svelt etc) and pair it with something like Webpack or Rollup, or in the case of Gatsby, Webpack and graphQL etc. So these meta-frameworks are competing on featureset added on top of the same underlying framework (in the case of react that would be tools like NextJS, GatsbyJS or Preact.
+
+### Why is Webpack everywhere?
+
+I've written up on this already in the chat with <Link to="/episodes/6">Fred K Schott</Link>, so I'll not write again here. Forgive me dear reader.
+
+We talk about the module graph in Webpack, and define what that is and how Webpack differs from tools like Grunt/Gulp/Brunch etc.
+
+Basically a module graph is that you know all of the import entry points for all the files you use, and also all of the dependencies that these files are linked to. Then you know what depends on what, when you have to run each piece of code, how you get to each piece of code and all of the code that you are using.
+
+Interruption as Chris realises he hasn't been sharing his webcam with me...
+
+We continue to talk about the differences between Webpack and the older more primitive build tools that came before. Chris corrects me on my negative assumption that Webpack would be better if not written in JS itself. Everyone is on the Rust and WASM hype-trains these days, and that didn't exist even back in 2015. Also if not in JS then the plugin ecosystem that's aimed at JS devs would not really exist, because expecting the JS programmers to learn a new language to write the extension that they need would be an excessive ask.
+
+There are new projects these days that are written in Rust and Go for example that are making build times orders of magnitude faster. SWC and ES Build are good examples. SWC is more plugable, and implements the Babel plugin architecture somewhat, ES Build is perhaps less pluggable at this stage. The best way to write plugins and extensions for SWC is in Rust.
+
+#### How do we free ourselves from Webpack?
+
+We need to look at what the browser supports these days. ES modules work, but there are still a few niceties that are missing, and ‘bare' imports is one such thing.
+
+Example of a bare import:
+
+```js
+import react from ‘react'
+```
+
+In the browser we would need to specify the path of the import instead like so:
+
+```js
+import react from ‘web_modules/react@16.3.1.js'
+```
+
+There a import maps on the horizon that will address this, but currently it's only an experimental feature in Chrome.
+Next we look at images. Having these processed in the same build process as the site is the bottleneck in terms of performance on generating static sites. We should move to having out images hosted in services such as Cloudinary is the future, and we can do this at build time. Upload the image and then add the returned link whilst we generate the site. I thought this would be slower, however Chris points out that this would only ever happen once (would even be comparable in speed needed on subsequent builds) because on subsequent builds the framework can check if these have already been uploaded.
+
+Chris's framework called Toast has this method working already, so definitely go check that out!
+Next we move onto CSS and how to unbundle this. It's the simplest and alread we have working solutions that are integrated into the current solutions we use. Can continue to write raw CSS, or use SASS or PostCSS or can use CSS-in-JS tools such as styled-components or Emotion etc.
+
+Next we cover Hot Module Replacement, see links below. But tools like Vite and Snowpack are doing this.
+Next we talk about the last piece that allows us to be free, and that's how we get data into these frameworks. This is an open question for the ecosystem at large. Gatsby uses GraphQL for instance. Toast prefers a CMS for data and asks you to follow the CMS's documentation to provide that data.
+
+We talk about GraphQL. Chris really likes it. REST API generally have a different implementation and isn't completely standardised, it's up to the developer to implement how they want. There are multiple endpoints to fetch your data in this world. In the GraphQL world it will give you all the data you request in one go. I talked more about this in my previous episode on GatsbyJS. Also GQL allows you to see what people are querying, which then allows you to organise your data more efficiently. We then talk about the quirky implementation of GraphQL in GatsbyJS. It's quirky for a reason however and we discuss why.
+
+### Toast
+
+It speaks JSON, so you can use whatever you want for your data sources. He's been developing for the past couple of months, but it's been an idea he's wanted to implement for many years. He worked on and is still a core GatsbyJS contributor. Chris shares that it's due to his conversation with Kyle Mathews about GraphQL that it was added to Gatsby at all. As he fell into this and worked on meta-framework development during this time, he felt it was a good idea to build one to address the problems that address the unbundling we've already covered above (i.e. removing Webpack etc). Toast uses Snowpack internally for addressing the bare imports issue. There is no bundler for the production release.
+
+We talk about the performance of Webpack bundles. The main issue in this world is the size of the bundle. In the next ES modules world, the problem comes for the depth of your import tree. I ask whether in the future as ESM becomes the norm, and that browsers will then cache these standard libraries (opposed to the mangled/uglified bundles produced with tools like Webpack) this could potentially offset the current performance cost of import trees. Yes is the short answer.
+
+Back to Toast. Basically it's Gatsby without Webpack. It supports MDX as a first-class citizen. The best implementation of MDX is currently that which is in Gatsby, he knows because Chris the chap who built it. The implementations in other meta-frameworks such as NuxtJS and NextJS are ok. The beauty with Toast is that because it uses ESM, you could for example have a fully featured reactJS app load in your example MDX file, and this would only load when the user hits that page (this complexity is obviously not added to a non-existent bundle) the browser simple imports the ES modules it requires and your react app would load right there inside your post. This is simple not possible in the other implementations that rely on Webpack.
+
+Toast is built on top of Preact. Preact already comes as a bunch of ES modules, whereas React would have to make breaking changes to ship an ES build. Projects like Pika have their own version of the React, which has to be updated and maintained by them. Preact is tiny at 3kb, but if you use Preact/Compat you can then have full access to the react ecosystem.
+
+Chris has a fully functional example Toast site which is based off his personal blog which you can fork and start tweaking. It comes with MDX, PrismJS which does all the rendering at build time. There's a babel plugin which allows you to run arbitrary NodeJS script and then inject that into your site. A source pages folder, which allows for JS based pages to be automatically made based upon their name. There's a static folder for your static assets. There's a nice tweetable selections plugin, which sounds super useful. It uses Emotion for CSS-in-JS.
+
+He plans to rewrite the core in Rust in the future to make everything super fast. He's working on this now.
+
+### MDX Conference
+
+It'll be streaming live on Twitch on August the 24th for free to all. MDX 2.0 will be revealed at the conference.
+
+### Party Corgi
+
+The network is a community for content creators with various channels for all aspects of developing and shipping content. It also has a healthy amount of off-topic channels to help the community relax and talk about things outside of their work, so things like baking and plants or working-out etc. We talk a bit about the running of a Discord server.
+
+### Wrapup questions
+
+> NOTE: OUTAGE - We lose connection here for a few mins. So please forgive the broken content.
+> Also, note to self (which you can read): create some CSS styling for blockquotes and ordered lists!!
+
+- **If you could change one aspect of UI design or development in your industry, what would it be and why?**
+  - See more of a built-in component library, much like SwiftUI. Also he'd like to see a merging of appreciation between design and development. I talk a lot about this very topic in my first awkward episode, so go check that out. Chris talks about history here too, and shares that he did a design major at college.
+- **For someone joining or is new to your industry and is feeling overwhelmed, what advice would you give them?**
+  - The most important thing to remember is that not everything you are looking at: not everyone knows all of them. It's easy to get lost on the aggregator sites such as Twitter, and forget that everyone is on a different spike in knowledge. You need to remember that there will always be more to learn than is possible in a lifetime. So make sure that what you are learning and practicing is something you actually enjoy. Otherwise you will be unhappy. Careers knowledge industries are fairly long.
+- **What's a tool, app or package that you use which you believe deserves more attention than it currently has?**
+  - A CSS library called Knopf that uses CSS variable to completely configure your buttons.
+
+## Link
+
+- [Chris Biscardi](https://www.christopherbiscardi.com/)
+- [ActionScript](https://en.wikipedia.org/wiki/ActionScript)
+- [JAMStack](https://jamstack.org/)
+- [Serverless computing](https://en.wikipedia.org/wiki/Serverless_computing)
+- [Build vs Buy Paradigm](https://www.cms-connected.com/News-Archive/January-2019/The-Build-vs-Buy-vs-Lease-Paradigm)
+- [Amazon S3](https://aws.amazon.com/s3/)
+- [Amazon Lambda](https://aws.amazon.com/lambda/)
+- [What's a CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/)
+- [Sapper](https://sapper.svelte.dev/)
+- [NextJS](https://nextjs.org/)
+- [Create React App](https://create-react-app.dev/)
+- [GatsbyJS](https://www.gatsbyjs.org/)
+- [VueJS](https://vuejs.org/)
+- [VuePress](https://vuepress.vuejs.org/)
+- [Grunt](https://gruntjs.com/)
+- [Gulp](https://gulpjs.com/)
+- [Brunch](https://brunch.io/)
+- [Joel Hooks](https://joelhooks.com/)
+- [SWC](https://github.com/swc-project/swc)
+- [ES Build](https://github.com/evanw/esbuild)
+- [Rust](https://www.rust-lang.org/)
+- [WASM](https://webassembly.org/)
+- [Neon](https://github.com/neon-bindings/neon)
+- [Cloudinary](https://cloudinary.com/)
+- [Styled Components](https://styled-components.com/)
+- [Emotion](https://emotion.sh/docs/introduction)
+- [HMR](https://webpack.js.org/concepts/hot-module-replacement/)
+- [Vite and HMR](https://github.com/vitejs/vite#hot-module-replacement)
+- [Rethinking HMR](https://medium.com/@basarat/rethinking-hot-module-reloading-58ce15b5f496)
+- [Snowpack](https://www.snowpack.dev/)
+- [Browsersync](https://www.browsersync.io/)
+- [FuseBox](https://fuse-box.org/)
+- [Toast](https://github.com/ChristopherBiscardi/toast)
+- [Graphql-mesh](https://graphql-mesh.com/)
+- [Kyle Mathews](https://twitter.com/kylemathews)
+- [Preact](https://preactjs.com/)
+- [Pika](https://www.pika.dev/)
+- [Preact-compat](https://github.com/preactjs/preact-compat)
+- [Prism](https://prismjs.com/)
+- [Building OpenGraph image](https://egghead.io/playlists/building-an-opengraph-image-generation-api-with-cloudinary-netlify-functions-and-react-914e)
+- [Playwright](https://github.com/microsoft/playwright)
+- [MDX Conference](https://mdxjs.com/)
+- [Party Corgi Network](https://www.partycorgi.com/)
+- [Party Corgi Podcast](https://party-corgi-podcast.simplecast.com/)
+- [Discord](https://discord.com/)
+- [Refactoring UI](https://refactoringui.com/)
+- [Knopf](https://knopf.dev/)
