@@ -36,13 +36,13 @@ In this week's episode I talk with Chris Biscardi about the Jamstack, gatsbyJS a
 
 ### Introduction
 
-Got into the industry via ActionsSript, then moved over JS when Adobe killed it off. Worked at Docker, Dropbox and recently finished a contract with GatsbyJS.
+Chris got into the industry via ActionsSript, then moved over to JS when Adobe killed it off. Worked at Docker, Dropbox and recently finished a long contract with GatsbyJS.
 
 Talk a bit about the Party Corgi Podcast, and the rainbow corgi logo (which is cute). Chris shares that he has nerves with his podcast too (after I apologies for a few nervous erm/ahhs etc). I've left these in unedited because the conversation took a nice direction.
 
 ### What is the Jamstack
 
-Jamstack and serverless are pretty much the same thing, and are both associated with Build vs Buy Paradigm i.e. if the technology is your core competency then build it, else buy it.
+Jamstack and serverless are pretty much the same thing, and are both associated with the Build vs Buy Paradigm i.e. if the technology is your core competency then build it, else buy it.
 
 It's basically the reduction in complexity associated with large devops pipelines i.e. you're not running a kubernetes or large distributed infrastructure. Instead you're basically shipping a zip file that's then deployed on to Amazon S3 or a CDN, and you're serving a bunch or static files. All the compute necessary to generate your site is done at build time.
 
@@ -60,7 +60,7 @@ We talk about a future where Jamstack sites could do incremental builds, and I t
 
 #### What's a meta-framework?
 
-Basically the tools you're using on top of a site or framework. Most people use vue/angular/react to build sites these days. However there are tools built on top of these frameworks, such as Create React App, Sapper and VuePress. These tools take the underlying technology (react, svelt etc) and pair it with something like Webpack or Rollup, or in the case of Gatsby, Webpack and graphQL etc. So these meta-frameworks are competing on featureset added on top of the same underlying framework (in the case of react that would be tools like NextJS, GatsbyJS or Preact.
+Basically the tools you're using on top of a site or framework. Most people use vue/angular/react to build sites these days. However there are tools built on top of these frameworks, such as Create React App, Sapper and VuePress. These tools take the underlying technology (react, svelt etc) and pair it with something like Webpack or Rollup, or in the case of Gatsby, Webpack and graphQL etc. So these meta-frameworks are competing on featureset added on top of the same underlying framework (in the case of react that would be tools like NextJS, GatsbyJS).
 
 ### Why is Webpack everywhere?
 
@@ -105,11 +105,11 @@ We talk about GraphQL. Chris really likes it. REST API generally have a differen
 
 ### Toast
 
-It speaks JSON, so you can use whatever you want for your data sources. He's been developing for the past couple of months, but it's been an idea he's wanted to implement for many years. He worked on and is still a core GatsbyJS contributor. Chris shares that it's due to his conversation with Kyle Mathews about GraphQL that it was added to Gatsby at all. As he fell into this and worked on meta-framework development during this time, he felt it was a good idea to build one to address the problems that address the unbundling we've already covered above (i.e. removing Webpack etc). Toast uses Snowpack internally for addressing the bare imports issue. There is no bundler for the production release.
+It speaks JSON, so you can use whatever you want for your data sources. He's been developing for the past couple of months, but it's been an idea he's wanted to implement for many years. He worked on and is still a core GatsbyJS contributor. Chris shares that it's due to his conversation with Kyle Mathews about GraphQL that it was added to Gatsby at all. As he fell into this and worked on meta-framework development during this time, he felt it was a good idea to build one to address the problems that targets the unbundling we've already covered above (i.e. removing Webpack etc). Toast uses Snowpack internally for addressing the bare imports issue. There is no bundler for the production release.
 
 We talk about the performance of Webpack bundles. The main issue in this world is the size of the bundle. In the next ES modules world, the problem comes for the depth of your import tree. I ask whether in the future as ESM becomes the norm, and that browsers will then cache these standard libraries (opposed to the mangled/uglified bundles produced with tools like Webpack) this could potentially offset the current performance cost of import trees. Yes is the short answer.
 
-Back to Toast. Basically it's Gatsby without Webpack. It supports MDX as a first-class citizen. The best implementation of MDX is currently that which is in Gatsby, he knows because Chris the chap who built it. The implementations in other meta-frameworks such as NuxtJS and NextJS are ok. The beauty with Toast is that because it uses ESM, you could for example have a fully featured reactJS app load in your example MDX file, and this would only load when the user hits that page (this complexity is obviously not added to a non-existent bundle) the browser simple imports the ES modules it requires and your react app would load right there inside your post. This is simple not possible in the other implementations that rely on Webpack.
+Back to Toast. Basically it's Gatsby without Webpack. It supports MDX as a first-class citizen. The best implementation of MDX is currently that which is in Gatsby, he knows because he built it. The implementations in other meta-frameworks such as NuxtJS and NextJS are ok. The beauty with Toast is that because it uses ESM, you could for example have a fully featured reactJS app load into an MDX page, and this would only load when the user hits that page (this complexity is obviously not added to a non-existent bundle) the browser simple imports the ES modules it requires and your react app would load right there inside your post. This is simply not possible in the other implementations that rely on Webpack.
 
 Toast is built on top of Preact. Preact already comes as a bunch of ES modules, whereas React would have to make breaking changes to ship an ES build. Projects like Pika have their own version of the React, which has to be updated and maintained by them. Preact is tiny at 3kb, but if you use Preact/Compat you can then have full access to the react ecosystem.
 
@@ -127,15 +127,21 @@ The network is a community for content creators with various channels for all as
 
 ### Wrapup questions
 
-> NOTE: OUTAGE - We lose connection here for a few mins. So please forgive the broken content.
-> Also, note to self (which you can read): create some CSS styling for blockquotes and ordered lists!!
+> #### **Note**<br />
+>
+> We lose connection during this section for a few mins. So please forgive the broken content 🙏
 
-- **If you could change one aspect of UI design or development in your industry, what would it be and why?**
-  - See more of a built-in component library, much like SwiftUI. Also he'd like to see a merging of appreciation between design and development. I talk a lot about this very topic in my first awkward episode, so go check that out. Chris talks about history here too, and shares that he did a design major at college.
-- **For someone joining or is new to your industry and is feeling overwhelmed, what advice would you give them?**
-  - The most important thing to remember is that not everything you are looking at: not everyone knows all of them. It's easy to get lost on the aggregator sites such as Twitter, and forget that everyone is on a different spike in knowledge. You need to remember that there will always be more to learn than is possible in a lifetime. So make sure that what you are learning and practicing is something you actually enjoy. Otherwise you will be unhappy. Careers knowledge industries are fairly long.
-- **What's a tool, app or package that you use which you believe deserves more attention than it currently has?**
-  - A CSS library called Knopf that uses CSS variable to completely configure your buttons.
+1. **If you could change one aspect of UI design or development in your industry, what would it be and why?**
+
+- See more of a built-in component library, much like SwiftUI. Also he'd like to see a merging of appreciation between design and development. I talk a lot about this very topic in my <Link to="/episodes/1">first awkward episode</Link>, so go check that out. Chris talks about history here too, and shares that he did a design major at college.
+
+2. **For someone joining or is new to your industry and is feeling overwhelmed, what advice would you give them?**
+
+- The most important thing to remember is that everything you are looking at: not everyone knows all of them. It's easy to get lost on the aggregator sites such as Twitter, and forget that everyone is on a different spike in knowledge. You need to remember that there will always be more to learn than is possible in a lifetime. So make sure that what you are learning and practicing is something you actually enjoy. Otherwise you will be unhappy. Careers in knowledge industries are fairly long.
+
+3. **What's a tool, app or package that you use which you believe deserves more attention than it currently has?**
+
+- A CSS library called Knopf that uses CSS variable to completely configure your buttons, because aren't we all sick of building buttons!?
 
 ## Link
 

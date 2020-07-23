@@ -114,8 +114,25 @@ code {
   ul {
     list-style-type: disc;
   }
+  ol {
+    list-style-type: decimal;
+  }
   h1, h2, h3, h4, h5, h6 {
     color: $colour-pink;
+  }
+
+  blockquote {
+    border-left: 5px solid $colour-blue;
+    background-color: $colour-grey;
+    padding: $base-spacing-unit;
+    > * {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    > * + * {
+      margin-top: $half-spacing-unit;
+    }
+    margin-bottom: $base-spacing-unit;
   }
 }
 
