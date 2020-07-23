@@ -64,6 +64,9 @@ export default function EpisodeTemplate({data: {mdx, site}}) {
           style={{marginBottom: '20px'}}
         />
       </SectionContent>
+      <SectionContent>
+        <PodcastServices />
+      </SectionContent>
       <SectionContent className="episode post">
         <MDXProvider
           components={{
